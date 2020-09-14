@@ -1,0 +1,41 @@
+/* 768++  */
+.b-radio {
+    &__label {
+        height: 64px;
+    }
+
+    &__text-label {
+        font-size: 13px;
+        line-height: 18px;
+
+        b {
+            .nunito-regular();
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: normal;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-radio {
+        &__label {
+            height: 105px;
+        }
+
+        &__text-label {
+            b {
+                margin: 0 0 6px;
+            }
+        }
+
+        &--calculator {
+            width: calc(~'100% / 3');
+            margin: 0 3px;
+
+            &:not(:last-child) {
+                margin: 0 3px;
+            }
+        }
+    }
+}

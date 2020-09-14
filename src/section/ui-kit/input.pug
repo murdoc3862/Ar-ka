@@ -1,0 +1,13 @@
+mixin input(obj)
+    +b.input(class!=attributes.class)
+        if obj.text
+            +e('label').label #{obj.text}
+            if obj.textarea
+                +e('textarea').input-field&attributes( attributes )(id=obj.id, placeholder=obj.placeholder, name=obj.name )
+            else
+                +e('input').input-field&attributes( attributes )(id=obj.id, type=obj.type, placeholder=obj.placeholder, name=obj.name, value=obj.value, class=obj.class, patterm=obj.patterm, class=obj.class )
+        else
+            if obj.textarea
+                +e('textarea').input-field&attributes( attributes )(id=obj.id, placeholder=obj.placeholder, name=obj.name )
+            else
+                +e('input').input-field&attributes( attributes )(id=obj.id, type=obj.type, placeholder=obj.placeholder, name=obj.name, value=obj.value, class=obj.class, patterm=obj.patterm, class=obj.class )

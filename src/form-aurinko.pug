@@ -1,0 +1,85 @@
+//- form
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'form-aurinko'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Form Aurinko';
+    - var colorblack = true;
+
+//- Выводим content
+block content
+    include section/ui-kit/title.pug
+    include section/ui-kit/form.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/drop-down.pug
+    include section/ui-kit/icon.pug
+    include section/ui-kit/quote.pug
+    +b.wrap-blocks.--form-aurinko
+        +form().--aurinko.js-validate
+            +title('h1', 'See the power of Aurinko in action!').--aurinko
+            +e('p').text-aurinko Enter your info below and we'll get back to you shortly.
+            +input({
+                id: 'id-text',
+                type: 'text',
+                name: 'text',
+                text: 'Name'
+            }).--aurinko(required)
+            +input({
+                id: 'id-email',
+                type: 'email',
+                name: 'email',
+                text: 'Work Email Address'
+            }).--aurinko(required)
+            +drop-down({
+                text: 'Country / Region',
+                'items': [
+                    {
+                        'content': 'Canada',
+                        'value': 'Canada',
+                        'id': 'Canada'
+                    },
+                    {
+                        'content': 'United States',
+                        'value': 'States',
+                        'id': 'States'
+                    },
+                    {
+                        'content': 'United Kingdom',
+                        'value': 'Kingdom',
+                        'id': 'Kingdom'
+                    },
+                    {
+                        'content': 'Canada',
+                        'value': 'Canada-2',
+                        'id': 'Canada-2'
+                    }
+                ]
+            }).--bouble-menu.--aurinko
+            +input({
+                id: 'id-submit',
+                type: 'submit',
+                name: 'submit',
+                value: 'SUBMIT'
+            }).--submit
+        .b-container
+            +b.list-wrap.--form-aurinko
+                +title('h1', 'With Aurinko you can').--list-title
+                +e('ul').ul
+                    +e('li').li Focus critical developer resources on your core business
+                        +icon('check').--check
+                    +e('li').li Launch new products faster with less code
+                        +icon('check').--check
+                    +e('li').li Improve conversion and engagement rates
+                        +icon('check').--check
+    +quote({
+        'src': 'images/inhtml/john-mitchell.jpg',
+        'text': '"Finding a reliable partner like Aurinko has allowed our team to focus on solving our business challenges without having to worry about solving API integration issues. The Aurinko API solution and integration support is first-class and helped us reach success rapidly."',
+        'author': 'John Mitchell',
+        'post': 'Founder @ Repfabric'
+    }).--form-aurinko

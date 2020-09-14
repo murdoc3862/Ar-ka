@@ -1,0 +1,47 @@
+/* 320++  */
+.b-intro {
+    margin: 18px 0 28px;
+    padding: 0 15px;
+
+    &__desc-wrapper {
+        margin: 0 0 40px;
+    }
+
+    &__desc {
+        padding: 0 10px 0 40px;
+        z-index: 3;
+    }
+
+    &__text {
+        color: @cl-light-grayish-blue;
+        font-size: 18px;
+        line-height: 25px;
+        margin: 0 0 20px;
+
+        & > p {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 0 22px;
+            }
+        }
+    }
+
+    &__image-wrapper {
+        margin: 0 -25px 0 0;
+        overflow: hidden;
+        padding: 0 10px 0 40px;
+        position: relative;
+        text-align: right;
+        z-index: 2;
+    }
+
+    &__image {
+        max-width: none;
+        width: calc(~'100% + 32%');
+    }
+
+    &--pabble {
+        padding-top: 90px;
+    }
+}

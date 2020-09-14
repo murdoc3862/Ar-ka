@@ -1,0 +1,29 @@
+//- ====================
+//- aurinko: link
+//- 16-07-2020: sashakasha
+//- --------------------
+//- Link
+//- ====================
+
+//- if <a>        link = true
+//- if <button>   link = false
+
+mixin link(content, link, href)
+    if link == true
+        +b('a').link(href=`${href ? href : 'javascript:void(0);'}` title=`${content}`)&attributes(attributes) #{content}
+            block
+
+    else if link == 'tel'
+        +b('a').link(href=`tel:+${content}` title=`${content}`)&attributes(attributes) #{content}
+            block
+
+    else if link == 'mail'
+        +b('a').link(href=`mailto:${content}` title=`${content}`)&attributes(attributes) #{content}
+            block
+
+    else if link == 'href'
+        +b('a').link(href=`${content}` title=`${content}`)&attributes(attributes) #{content}
+
+    else
+        +b('button').link&attributes(attributes) #{content}
+            block

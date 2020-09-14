@@ -1,0 +1,12 @@
+include title.pug
+
+mixin values(data)
+    +b.values(class!=attributes.class)
+        +title('h1')(class=data.title_mod).--values !{data.title}
+        +e('div').wrap-item
+            each item in data.items
+                +e('div').item
+                    +e('div').wrap-img
+                        +e('img')(src=item.src)
+                    +title('h3').--values-small !{item.title}
+                    +e('div').text !{item.text}

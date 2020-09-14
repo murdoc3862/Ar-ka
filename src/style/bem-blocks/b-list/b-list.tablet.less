@@ -1,0 +1,61 @@
+/* 768++  */
+.b-list {
+    &__item {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 0 0 0 26px;
+
+        &:not(:last-child) {
+            margin: 0 0 14px;
+        }
+
+        .b-list--curved-zone & {
+            width: calc(~'50% - 30px');
+            padding: 0 0 0 50px;
+            margin: 0 15px 18px;
+
+            &:not(:last-child) {
+                margin: 0 15px 18px;
+            }
+
+            &:before {
+                left: 0;
+            }
+        }
+    }
+
+    &--curved-zone {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-list {
+        &__item {
+            .b-list--curved-zone & {
+                width: calc(~'50% - 110px');
+                margin: 0 55px 14px;
+
+                &:not(:last-child) {
+                    margin: 0 55px 14px;
+                }
+
+                &:before {
+                    left: 0;
+                }
+            }
+        }
+
+        &--curved-zone {
+            margin: 0 -55px;
+        }
+
+        .b-card--yoxel &,
+        .b-card--info & {
+            width: 50%;
+        }
+    }
+}

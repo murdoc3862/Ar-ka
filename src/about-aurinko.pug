@@ -1,0 +1,78 @@
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'about-aurinko'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'About Aurinko';
+    - var colorlight = true;
+
+//- Выводим content
+block content
+    include section/ui-kit/values.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/link.pug
+    +b.about-us
+        +e('div').description
+            .b-container
+                +title('h3', 'About us').--h3.--about-us
+                +title('h1', 'Aurinko is a unified mailbox API platform made for developers, by developers').--h1.--about-us-big
+                +e('div').text Streamlining integrations with mailbox providers and services like Google, Office 365, Outlook.com, MS Exchange, The Aurinko API empowers developers to build innovative software quickly, easily and cost effectively.
+                +e('img').cache-bottom(src='images/inhtml/curved-bottom-cache-bottom.svg', alt)
+        +e('div').offers
+            .b-container
+                +title('h3', 'We deliver tools and services that allow businesses to focus on their core skills, instead of wasting months trying to reinvent the wheel').--h3.--offers
+                +e('div').text-small Our mission is to help companies become masters of their craft. We enable developers to build apps that integrate with email, calendar and contacts providers that their customers love.
+
+    hr
+    .b-container
+        +values({
+            title: 'Our values',
+        'items': [{
+                    'src': 'images/inhtml/values/objective.svg',
+                    'title': 'Focus on impact',
+                    'text': 'We know our growth is dependent on increasing the value we deliver to customers. We focus our energy on improvements that will make a real difference, with a desired outcome made clear up-front.'
+                },
+                {
+                    'src': 'images/inhtml/values/binoculars.svg',
+                    'title': 'Pay attention to detail',
+                    'text': 'We believe the quality of everything we do is a competitive advantage. We expect high attention-to-detail, whether its in how we write an email, review our analytics, or write our code.'
+                },
+                {
+                    'src': 'images/inhtml/values/idea.svg',
+                    'title': 'Always look to improve',
+                    'text': 'We survive and grow by constantly looking for opportunities to improve our solutions, our processes and ourselves. We own our mistakes, using them as an opportunity to learn what changes we should make to processes and tools.'
+                },
+                {
+                    'src': 'images/inhtml/values/road.svg',
+                    'title': 'Enjoy the journey',
+                    'text': 'While grit and curiosity drive us to achieve the best solution to every challenge, we also bring a positive outlook to everything we do. We don’t pin our happiness on the attainment of a particular end goal - we delight in every step along the way.'
+                },
+                {
+                    'src': 'images/inhtml/values/hand.svg',
+                    'title': 'Care more',
+                    'text': 'We foster a culture of empathy and transparency to ensure that we’re always adding value and putting the needs of our customers first.'
+                },
+                {
+                    'src': 'images/inhtml/values/talk.svg',
+                    'title': 'Team over self',
+                    'text': 'Empowering teams is key to our success. We check their egos at the door to help others achieve team goals and mutual success.'
+                }
+            ]
+        })
+    hr
+    +b.command
+        +e(div).block-one
+            .b-container
+                +title('h1', 'Join our team — we are hiring!').--h1.--command
+                +e('div').wrap-illustration
+                    +e('p').text.--left Aurinko is at that exciting stage where every person that joins the team can have a major hand in our success and rapidly advance their careers in the process. Since the very beginning, we have been obsessed with hiring. Not just hiring, but finding the absolute right people to fit the company.
+                    +e('div').wrap-img
+                        +e('img')(src="images/inhtml/people.svg")
+                +e('p').text We believe it takes great people to make a great product. That’s why we hire not only the perfect professional fits, but people who embody our company values.
+        +e('div').block-two
+            .b-container
+                +title('h2', 'We are constantly on the lookout for new team members. Let us know if you are interested in joining our team by emailing us at:').--h2.--command-connection
+                    +link('jobs@aurinko.io','mail', 'jobs@aurinko.io').--command

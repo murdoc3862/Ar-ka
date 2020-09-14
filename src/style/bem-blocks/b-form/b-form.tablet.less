@@ -1,0 +1,46 @@
+.b-wrap-form {
+    
+    &--aurinko {
+        padding-left: 0;
+        margin-top: 0;
+        padding-right: 0;
+        padding-top: 44px;
+        form {
+            max-width: 384px;
+            margin: auto;
+        }
+    }
+    &--aurinko & {
+        &__text-aurinko {
+            font-size: 17px;
+            line-height: 22px;
+            text-align: center;
+            display: block;
+            max-width: 271px;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        padding-top: 8px;
+
+        &--aurinko {
+            position: absolute;
+            max-width: 386px;
+            right: 0;
+            z-index: 2;
+            padding: 33px;
+            border-radius: 27px;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+            top: 27px;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        &--aurinko{
+            max-width: 454px;
+            right: 50px;
+        }
+    }
+}

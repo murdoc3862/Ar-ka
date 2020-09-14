@@ -1,0 +1,162 @@
+//- ====================
+//- aurinko: yoxel
+//- 23-07-2020: sashakasha
+//- --------------------
+//- Yoxel
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'yoxel'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Yoxel';
+    - var yoxel = true;
+
+//- Выводим content
+block content
+    include section/assistant.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/values.pug
+
+    +b.hero
+        .b-container
+            +e.wrapper
+                +e.desc-wrapper
+                    +title('h1', 'Smart inbox integrations for Salesforce').--h1.--yoxel.--hero
+                    +e.text
+                        p Increase user adoption and improve data accuracy for Salesforce. Yoxel syncs automatically and multi-directionally calendars, contacts, emails and tasks for Salesforce users.
+                +e.image-wrapper
+                    +e('img').image(src='images/inhtml/hero-image-1.png')
+
+            +e.sub
+                +e.image-wrapper
+                    +e('img').image(src='images/inhtml/hero-image-2.png')
+                +e.desc-wrapper
+                    +title('h2', 'Inefficient processes, issues with reporting and communication challenges slowing you down?').--h2.--sub
+                    +e.text
+                        p Learn how thousands of&nbsp;companies increase the quality of&nbsp;customer data, improve reporting accuracy and have more relevant conversations by&nbsp;automating activity capture in&nbsp;Salesforce. Eliminate data silos across your Salesforce users with Yoxel&rsquo;s inbox apps.
+
+    .b-container
+        +assistant({
+            title: '<span class="mark">Smart Salesforce sync</span> &mdash; automatic and bi-directional',
+            mark: '&mdash; automatic and bi-directional',
+            text: 'Improve data accuracy with Yoxel&rsquo;s bi-directional sync that automatically integrates calendar events, contacts, emails and tasks between Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google.',
+            'lists': ['<span class="bold">100% native Salesforce ui-kit</span>&nbsp;&mdash; manage your automatic sync configurations right from Salesforce.', '<span class="bold">Great for sales</span> as&nbsp;well as&nbsp;service teams. Works for communities users.', '<span class="bold">Full de-duplication.</span> Create new CRM records from emails and meetings.', '<span class="bold">Rule-based precision.</span> Match to&nbsp;multiple CRM records at&nbsp;once. Automatically create leads based on&nbsp;sync logic. Auto convert leads to&nbsp;contacts if&nbsp;calendar invite is&nbsp;scheduled.', '<span class="bold">Simplify sync deployment</span> to&nbsp;large teams using templates. Yoxel templates allows precise team setup.', '<span class="bold">Data always stays safe and secure in&nbsp;Salesforce.</span> The sync is&nbsp;deployed in&nbsp;Heroku (Salesforce cloud solution).'],
+            'items': [
+                {
+                    'header': 'Calendar sync',
+                    'description': '<p>Integrate Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google calendar events. See calendar events in&nbsp;Salesforce based on&nbsp;attendee list.</p><ul class="b-list"><li class="b-list__item">Yoxel&rsquo;s advanced bi-directional calendar syncing supports &laquo;true&raquo; recurring event and meeting syncing. Meetings can get associated with the right CRM records (leads, contacts, opportunities) automatically. The sync allows users to&nbsp;update series in&nbsp;Outlook and Salesforce.</li><li class="b-list__item">Yoxel detects and de-duplicates calendar events for you. Nothing gets deleted&nbsp;&mdash; ever. No&nbsp;clutter, no&nbsp;confusion!</li></ul>',
+                    'src': 'images/inhtml/sync.svg'
+                },
+                {
+                    'header': 'Email sync',
+                    'description': '<p>Integrate Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google calendar events. See calendar events in&nbsp;Salesforce based on&nbsp;attendee list.</p><ul class="b-list"><li class="b-list__item">Yoxel&rsquo;s advanced bi-directional calendar syncing supports &laquo;true&raquo; recurring event and meeting syncing. Meetings can get associated with the right CRM records (leads, contacts, opportunities) automatically. The sync allows users to&nbsp;update series in&nbsp;Outlook and Salesforce.</li><li class="b-list__item">Yoxel detects and de-duplicates calendar events for you. Nothing gets deleted&nbsp;&mdash; ever. No&nbsp;clutter, no&nbsp;confusion!</li></ul>',
+                    'src': 'images/inhtml/sync.svg',
+                    'class': '-active'
+                },
+                {
+                    'header': 'Contact sync',
+                    'description': '<p>Integrate Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google calendar events. See calendar events in&nbsp;Salesforce based on&nbsp;attendee list.</p><ul class="b-list"><li class="b-list__item">Yoxel&rsquo;s advanced bi-directional calendar syncing supports &laquo;true&raquo; recurring event and meeting syncing. Meetings can get associated with the right CRM records (leads, contacts, opportunities) automatically. The sync allows users to&nbsp;update series in&nbsp;Outlook and Salesforce.</li><li class="b-list__item">Yoxel detects and de-duplicates calendar events for you. Nothing gets deleted&nbsp;&mdash; ever. No&nbsp;clutter, no&nbsp;confusion!</li></ul>',
+                    'src': 'images/inhtml/sync.svg'
+                },
+                {
+                    'header': 'Task sync',
+                    'description': '<p>Integrate Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google calendar events. See calendar events in&nbsp;Salesforce based on&nbsp;attendee list.</p><ul class="b-list"><li class="b-list__item">Yoxel&rsquo;s advanced bi-directional calendar syncing supports &laquo;true&raquo; recurring event and meeting syncing. Meetings can get associated with the right CRM records (leads, contacts, opportunities) automatically. The sync allows users to&nbsp;update series in&nbsp;Outlook and Salesforce.</li><li class="b-list__item">Yoxel detects and de-duplicates calendar events for you. Nothing gets deleted&nbsp;&mdash; ever. No&nbsp;clutter, no&nbsp;confusion!</li></ul>',
+                    'src': 'images/inhtml/sync.svg'
+                }
+            ]
+        }).--yoxel.js-mobile-open
+
+        +assistant({
+            title: '<span class="mark">Smart Salesforce sync</span> &mdash; automatic and bi-directional',
+            mark: '&mdash; automatic and bi-directional',
+            text: 'Improve data accuracy with Yoxel&rsquo;s bi-directional sync that automatically integrates calendar events, contacts, emails and tasks between Salesforce and Office 365, MS&nbsp;Exchange, Outlook.com and/or Google.',
+            'lists': ['For every email you receive, see comprehensive activity history for leads, contacts, accounts, opportunities, cases&nbsp;&mdash; <span class="bold">combined Salesforce, email, and calendar data in&nbsp;one view</span>.', '<span class="bold">Quickly create Salesforce leads and contacts</span> right from your inbox.', '<span class="bold">Simplify activity capture</span>&nbsp;&mdash; easily log emails and attachments to&nbsp;Salesforce and associate them with the right opportunities, contacts and leads.', '<span class="bold">Automate follow-up process</span>&nbsp;&mdash; prepare your follow-up sequences once and let Yoxel send follow-up emails for you. Quickly and easily schedule emails to&nbsp;send later. Yoxel monitors your email threads and sends follow-up emails automatically if&nbsp;no&nbsp;response.', '<span class="bold">Yoxel&rsquo;s smart tagging</span> will help you stay on&nbsp;top of&nbsp;every deal&nbsp;&mdash; discover missing CRM contacts that you&rsquo;re actively communicating with, identify unfinished conversations with long periods of&nbsp;inactivity.']
+        }).--yoxel
+
+    +b.salesforce
+        .b-container
+            +b.info-block.--yoxel
+                +e('div').wrap-elements
+                    +e(div).wrap-img
+                        +e('img')(src='images/inhtml/icon-check-inbox.svg', alt='')
+                    +e(div).wrap-content
+                        +title('h2', 'Instantly view relevant Salesforce data in&nbsp;your inbox').--h2.--yoxel.--info-block
+                        +e('ul').ul
+                            li.b-list__item Yoxel inbox app surfaces relevant Salesforce data so&nbsp;you can craft the perfect response without opening Salesforce.
+                            li.b-list__item See in&nbsp;your inbox all Salesforce data that is&nbsp;needed for effective communication&nbsp;&mdash; contact snapshots; upcoming and recent activities; opportunities and cases.
+
+            +b.info-block.--yoxel
+                +e('div').wrap-elements
+                    +e(div).wrap-img
+                        +e('img')(src='images/inhtml/icon-search.svg', alt='')
+                    +e(div).wrap-content
+                        +title('h2', 'Yoxel supports email to&nbsp;cases and custom objects').--h2.--yoxel.--info-block
+                        +e.text
+                            p Does your team work on&nbsp;cases? Stay assured that emails will be&nbsp;logged to&nbsp;relevant cases with applicable custom objects.
+
+            +b.info-block.--yoxel
+                +e('div').wrap-elements
+                    +e(div).wrap-img
+                        +e('img')(src='images/inhtml/icon-social-network.svg', alt='')
+                    +e(div).wrap-content
+                        +title('h2', 'Drip email campaigns&nbsp;&mdash; automatic rule based follow-ups').--h2.--yoxel.--info-block
+                        +e('ul').ul
+                            li.b-list__item Schedule emails to&nbsp;send later and automate your follow up&nbsp;process.
+                            li.b-list__item Never forget a&nbsp;follow up&nbsp;with drip campaigns with our robust response detection.
+                            li.b-list__item Create more time in&nbsp;your day by&nbsp;automatically triggering personalized emails to&nbsp;nurture every important relationship.
+                            li.b-list__item Personalize your emails to&nbsp;start real conversations.
+            +b.info-block.--yoxel
+                +e('div').wrap-elements
+                    +e(div).wrap-img
+                    +e(div).wrap-content
+                        +title('h2', 'Work through list views').--h2.--yoxel.--info-block
+                        +e.text
+                            p Take advantage of&nbsp;the list views you have set up&nbsp;in&nbsp;Salesforce for leads, contacts, opportunities, and accounts.
+
+    .b-container
+        +values({
+            title: 'What you get?',
+            title_mod: '--yoxel',
+            'items': [{
+                'src': 'images/inhtml/what-you-get/icon-easy-to-use.svg',
+                'title': 'Exceptionally easy-to-use',
+                'text': 'When you need an&nbsp;easy-to-use Salesforce integration, turn to&nbsp;Yoxel. Yoxel can be&nbsp;used after 3&nbsp;easy sign up&nbsp;steps. No&nbsp;training is&nbsp;needed!'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-goal.svg',
+                'title': 'Customizable by&nbsp;team and role',
+                'text': 'Deploy the sync to&nbsp;multiple teams with different requirements (sync modules, sync rule options, mailbox servers, ...) in&nbsp;the same Org..'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-sync.svg',
+                'title': 'Fully automatic sync',
+                'text': 'Set automatic sync frequency that meets your needs&nbsp;&mdash; hourly, every 30&nbsp;min, every 10&nbsp;min'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-deleted.svg',
+                'title': 'Won&rsquo;t duplicate records',
+                'text': 'Yoxel detects and de-duplicates duplicate data for you. Nothing gets deleted&nbsp;&mdash; ever. No&nbsp;clutter, no&nbsp;confusion!'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-directional.svg',
+                'title': 'Multi-directional reach',
+                'text': 'Our cloud-based Salesforce integration solution is&nbsp;multi-directional. You enter info in&nbsp;one platform and we&nbsp;sync it&nbsp;across others automatically.'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-king.svg',
+                'title': 'Rule-based precision',
+                'text': 'You&rsquo;re the boss! You can set rules to&nbsp;sync emails, tasks, events and contacts based on&nbsp;set of&nbsp;rules bi-directionally or&nbsp;in&nbsp;one direction.'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-security.svg',
+                'title': 'Frictionless security',
+                'text': 'Protecting your data is&nbsp;a&nbsp;top priority. The Yoxel app is&nbsp;deployed in&nbsp;Heroku cloud (Salesforce cloud solution). Your data never leaves Salesforce environment.'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-available.svg',
+                'title': '99.9% reliability',
+                'text': 'Yoxel is&nbsp;available 100% of&nbsp;the time through our 99.9% uptime guarantee, whether you are in&nbsp;a&nbsp;meeting room or&nbsp;on&nbsp;the&nbsp;go.'
+            },{
+                'src': 'images/inhtml/what-you-get/icon-service.svg',
+                'title': 'Exceptional support',
+                'text': 'Need help or&nbsp;have questions? Yoxel&rsquo;s support team is&nbsp;here to&nbsp;assist and give you answers at&nbsp;any time, literally.'
+            }]
+        }).--yoxel

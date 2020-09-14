@@ -1,0 +1,28 @@
+/* 1366++  */
+.b-content {
+    position: relative;
+
+    &__image-wrapper {
+        display: block;
+        margin: 0 -960px 0 0;
+        overflow: hidden;
+        position: absolute;
+        right: 50%;
+        top: 466px;
+        z-index: -1;
+    }
+
+    &__image {
+        height: 1848px;
+        width: 408px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .b-content {
+        &__image-wrapper {
+            margin: 0;
+            right: 0;
+        }
+    }
+}

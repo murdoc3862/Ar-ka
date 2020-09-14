@@ -1,0 +1,17 @@
+//- ====================
+//- aurinko: start
+//- 05-08-2020: sashakasha
+//- --------------------
+//- Start Aurinko Today
+//- ====================
+
+mixin start()
+    include ui-kit/button.pug
+    include ui-kit/title.pug
+
+    +b.start
+        +e('img').cache-top(src='images/inhtml/curved-top-cache-top.svg', alt)
+        .b-container
+            +e.wrapper.--start
+                +title('h1', 'Start Aurinko Today').--h1.--start
+                +button('GET STARTED', true, '/form-aurinko').--start

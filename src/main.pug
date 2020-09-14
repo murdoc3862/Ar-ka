@@ -1,0 +1,121 @@
+//- ====================
+//- aurinko: main
+//- 07-04-2020: sashakasha
+//- --------------------
+//- Главная страница
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'main'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Главная страница';
+    - var main = true;
+
+//- Выводим content
+block content
+    include section/about.pug
+    include section/curved-zone.pug
+    include section/features.pug
+    include section/how-it-works.pug
+    include section/reviews.pug
+    include section/services.pug
+    include section/ui-kit/button.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/title.pug
+
+    +b.intro
+        +e.wrapper
+            +e.desc-wrapper
+                +e.desc
+                    +title('h1', 'Unified API for Google, Office 365, Outlook.com and MS&nbsp;Exchange').--h1.--intro
+                    +e.text
+                        p Build innovative apps that meet demands of&nbsp;your ever-connected users. Integrate emails, calendars and contacts quickly, easily and cost effectively.
+                    +button('Get Started', true, '/form-aurinko').--color
+            +e.image-wrapper
+                +e('img').image(src='images/inhtml/hero-image.svg')
+
+    +curved-zone--top().--top
+
+    +features({'items': [{
+                'src': 'images/inhtml/icon-calendar.svg',
+                'mod': '--calendar',
+                'title': 'Calendar API&nbsp;&mdash; two-way event based calendar sync',
+                "lists": ['Connect your application to&nbsp;Google, Office 365, Outlook.com, and Exchange calendars in&nbsp;just minutes.', 'Get event-based and two-way calendar sync with full CRUD (create, read, update, delete) capabilities.', 'Enable your apps to&nbsp;support appointment reminders, attachments and recurring events.', 'Let your users schedule calendar invites from within your application and their existing cloud calendar service.']
+            },{
+                'src': 'images/inhtml/icon-email.svg',
+                'mod': '--email',
+                'title': 'Email API&nbsp;&mdash; create, read, update and delete emails from any inbox',
+                "lists": ['Get event-based and bi-directional integration with your users&rsquo; Gmail, Outlook.com, Office 365 and Exchange inboxes.', 'Embed full email features within your application, including attachments.', 'Allow your users to&nbsp;search and retrieve all historic and new email from your app.', 'Access org-wide mailboxes via admin accounts.']
+            },{
+                'src': 'images/inhtml/icon-contacts.svg',
+                'mod': '--contacts',
+                'title': 'Contacts API&nbsp;&mdash; update contacts from anywhere',
+                "lists": ['Integrate your users&rsquo; Google, Outlook.com, Office 365 and Exchange address books with your apps.', 'Allow your users to create, read, update and delete contacts right from your app.', 'Get event-based and two-way contact sync with just a&nbsp;few lines of&nbsp;code.']
+            },{
+                'src': 'images/inhtml/icon-tasks.svg',
+                'mod': '--tasks',
+                'title': 'Tasks API&nbsp;&mdash; same taks in&nbsp;every app',
+                "lists": ['Automatically integrate tasks among the Google, Outlook.com, Office 365 and Exchange services so&nbsp;your users always up&nbsp;to&nbsp;the task.', 'Integrate tasks bi-directionally across all devices.']
+        }]
+    })
+
+    +reviews({'items': [{
+            'src': 'images/inhtml/john-mitchell.jpg',
+            'title': 'Repfabric',
+            'text': '&laquo;With Aurinko API, my&nbsp;team saved more than a&nbsp;year of&nbsp;engineering work. We&nbsp;were able to&nbsp;get up&nbsp;and running quickly with robust calendar, email and contact features that allowed&nbsp;us to&nbsp;grow our product quickly and securely.&raquo;',
+            'author': 'John Mitchell',
+            'post': 'Founder @ Repfabric'
+        },{
+            'src': 'images/inhtml/boban-peric.jpg',
+            'title': 'RedLotus',
+            'text': '&laquo;The Aurinko&rsquo;s sync logic API is&nbsp;very easy to&nbsp;work with. We&nbsp;were able to&nbsp;provide our users with powerful integrations in&nbsp;just a&nbsp;matter of&nbsp;weeks. It&nbsp;was then very straightforward to&nbsp;release the real-time sync capabilities to&nbsp;our customers.&raquo;',
+            'author': 'Boban Peric',
+            'post': 'CRM.me Lead Engineer RedLotus Corp'
+        }]
+    })
+
+    +services({'items': [{
+            'src': 'images/inhtml/icon-chat.svg',
+            'mod': '--chat',
+            'title': 'Increase value of&nbsp;your apps',
+            'text': 'Since Aurinko API is&nbsp;embeddable, users can access any and all of&nbsp;their needed services inside of&nbsp;your application without ever knowing that Aurinko is&nbsp;there at&nbsp;all, increasing your customers&rsquo; engagement, productivity and retention rates.'
+        },{
+            'src': 'images/inhtml/icon-cloud.svg',
+            'title': 'Event-based sync',
+            'text': 'Event-based sync is&nbsp;central to&nbsp;applications&rsquo; use of&nbsp;Aurinko API. Keeping track of&nbsp;events that occur in&nbsp;your end user&rsquo;s cloud service is&nbsp;pivotal to&nbsp;providing your users with the information they need from your application. Aurinko provides this data through our API by&nbsp;utilizing webhooks technology and data mapping.'
+        },{
+            'src': 'images/inhtml/icon-privacy.svg',
+            'title': 'Frictionless security',
+            'text': 'Protecting your sensitive data is&nbsp;a&nbsp;top priority. That is&nbsp;why we&nbsp;developed our API as&nbsp;a&nbsp;pass-though that never stores your data on&nbsp;our servers and have advanced security controls that have built-in OAuth2. In&nbsp;addition, your data is&nbsp;encrypted and isolated with multi-level permission checks. We&nbsp;give you full control over what data is&nbsp;passed through Aurinko API so&nbsp;your customer&rsquo;s data is&nbsp;always secure.'
+        },{
+            'src': 'images/inhtml/icon-stopwatch.svg',
+            'title': 'Save development time',
+            'text': 'Why waste years of&nbsp;development time when you can integrate your app with Google, Outlook, Office 365 and Exchange services in&nbsp;just days? Aurinko API has all pre-built features that can sync your app with email, calendar and contact services with just a&nbsp;few lines of&nbsp;code. In&nbsp;addition, Aurinko comes with pre-built security features that provide a&nbsp;secure and reliable connection that needs to&nbsp;be&nbsp;configured only once. We&nbsp;handle ongoing maintenance and updates for you.'
+        }]
+    })
+
+    +curved-zone--bottom().--bottom.--image
+
+    +about()
+
+    +how-it-works({
+        title: 'How to get started',
+        'items': [{
+            'number': '1',
+            'title': 'Step&nbsp;1: Get a&nbsp;free API key',
+            'text': '<a class="b-link" href="/form-aurinko" title="">Contact us </a> here to&nbsp;create an&nbsp;account to&nbsp;unlock the full platform for 30&nbsp;days&nbsp;&mdash; no&nbsp;credit card required.'
+        },{
+            'number': '2',
+            'title': 'Step&nbsp;2: Build an&nbsp;integration',
+            'text': 'With just a&nbsp;few lines of&nbsp;code, you can get full CRUD capabilities and bi-directional sync with any Google, Outlook, Office 365 and Exchange calendar, email and contact account.'
+        },{
+            'number': '3',
+            'title': 'Step&nbsp;3: Connect all your users',
+            'text': 'Whether you are connecting 1&nbsp;or a&nbsp;million accounts, you can rest easy knowing your data is&nbsp;safe with&nbsp;us.'
+        }]
+    })

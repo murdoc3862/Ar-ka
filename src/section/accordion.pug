@@ -1,0 +1,19 @@
+//- ====================
+//- aurinko: accordion
+//- 30-07-2020: sashakasha
+//- --------------------
+//- Accordion
+//- ====================
+
+mixin accordion(data)
+    include ui-kit/icon.pug
+
+    +b.accordion(class!=attributes.class)
+        .js-accordion
+            each item, index in data.items
+                +e.group.-group
+                    +e.header.-header
+                        span !{item.header}
+                        +icon('toggle').--accordion
+                    +e.content
+                        p !{item.content}

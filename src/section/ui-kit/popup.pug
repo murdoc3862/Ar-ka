@@ -1,0 +1,23 @@
+//- ====================
+//- aurinko: popup
+//- 06-04-2020: sashakasha
+//- --------------------
+//- Popup
+//- ====================
+
+mixin popup()
+    +b.popup&attributes(attributes)
+        +e.content
+            block
+
+
+mixin popup-data(data)
+    +b.popup&attributes(data.attributes)
+        +e.content(class=data.contentClass)
+            block
+
+
+mixin popup_close()
+    +b('a').popup__close(href='javasript:void(0);', class!=attributes.class).js-close-popup
+        include icon.pug
+        +icon('close-popup').--close-popup

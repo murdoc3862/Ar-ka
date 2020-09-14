@@ -1,0 +1,27 @@
+include ui-kit/list.pug
+include ui-kit/title.pug
+
+mixin assistant(data)
+    +b.assistant(class!=attributes.class)
+        +title('h1').--h1.--assistant !{data.title}
+        +e('div').text !{data.text}
+
+        if data.lists
+            +e.list
+                +b('ul').list.--marked.--curved-zone.--yoxel
+                    each list, index in data.lists
+                        +e('li').item !{list}
+        if data.items
+            +e('div').wrap-item
+                .js-accordion
+                    each item in data.items
+                        +e.group.-group(class=item.class)
+                            +e('div').wrap-img
+                                +e('img').insert(src=item.src, alt=item.alt)
+                                div.line.line--s1
+                                div.line.line--small.line--s2
+                                div.line.line--s3
+                            +e.header.-header
+                                span !{item.header}
+                                +e.content
+                                    +e('div').description !{item.description}

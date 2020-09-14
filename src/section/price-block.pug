@@ -1,0 +1,24 @@
+//- ====================
+//- aurinko: price-block
+//- 03-08-2020: sashakasha
+//- --------------------
+//- Price-block
+//- ====================
+
+mixin price-block(data)
+    include ui-kit/button.pug
+    include ui-kit/title.pug
+
+    +b.price-block
+        +e.wrapper
+            each item, index in data.items
+                +e.item
+                    +title('h2', item.title).--h2.--border.--yoxel.--price-block
+                    +e.info
+                        +e.sync-wrapper
+                            +e.subtext Sync frequency:
+                            +e.sync !{item.sync_frequency}
+                        +e.price-wrapper
+                            +e.price !{item.price}
+                            +e.subtext.--price per active user per month
+                        +button('Get Started', true, '/form-aurinko').--price-block

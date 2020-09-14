@@ -1,0 +1,70 @@
+//- Double menu
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'bouble-menu-yoxel'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Double menu yoxel';
+    - var yoxel = true;
+
+//- Выводим content
+block content
+    include section/ui-kit/title.pug
+    include section/ui-kit/form.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/drop-down.pug
+    .b-container
+        +b.wrap-blocks.--bouble-menu
+            +e('div').width-6.--bouble-menu
+                +title('h1', 'Contact us!').--bouble-menu
+                +e('p').text Whether you have a quick question or would like to chat with us about how we can help your team, we’d love to hear from you. Enter your info below and we'll get back to you shortly.
+            +e('div').width-6.--bouble-menu-bottom
+                +form().js-validate
+                    +input({
+                        id: 'id-text',
+                        type: 'text',
+                        name: 'text',
+                        text: 'Name'
+                    })(required)
+                    +input({
+                        id: 'id-email',
+                        type: 'email',
+                        name: 'email',
+                        text: 'Work Email Address'
+                    })(required)
+                    +drop-down({
+                        text: 'Country / Region',
+                        'items': [
+                            {
+                                'content': 'Canada',
+                                'value': 'Canada',
+                                'id': 'Canada'
+                            },
+                            {
+                                'content': 'United States',
+                                'value': 'States',
+                                'id': 'States'
+                            },
+                            {
+                                'content': 'United Kingdom',
+                                'value': 'Kingdom',
+                                'id': 'Kingdom'
+                            },
+                            {
+                                'content': 'Canada',
+                                'value': 'Canada-2',
+                                'id': 'Canada-2'
+                            }
+                        ]
+                    }).--bouble-menu
+                    +input({
+                        id: 'id-submit',
+                        type: 'submit',
+                        name: 'submit',
+                        value: 'SUBMIT'
+                    }).--submit

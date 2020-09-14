@@ -1,0 +1,92 @@
+//- ====================
+//- aurinko: pebbles
+//- 23-07-2020: sashakasha
+//- --------------------
+//- Pebble Pricing
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'pebbles'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Pebble Pricing';
+    - var pebbles = true;
+
+//- Выводим content
+block content
+    include section/ui-kit/button.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/title.pug
+
+    +b.heading.--pricing
+        .b-container
+            +e.wrapper
+                +title('h1', 'Pebble Pricing').--h1.--heading
+
+    +b.pricing
+        .b-container
+            +e.wrapper
+                +b.card.--professional
+                    +e.wrapper.--professional
+                        +title('h2', 'Professional').--h2.--border.--professional
+                        +title('h3', 'Simple, pay-as-you-go pricing. Pay only for what you need for as&nbsp;long as&nbsp;you need&nbsp;it.').--h3.--plan-card
+                        +list({
+                            'items':[{
+                                    'content': '30-day free trial'
+                                },
+                                {
+                                    'content': 'No&nbsp;credit card required to&nbsp;signup'
+                                },
+                                {
+                                    'content': 'Includes phone, chat and email support'
+                            }]
+                        })
+                    +e.buttons.--professional
+                        +e.price-wrapper
+                            +e('span').price $5
+                            +e('span').subtext per active user per month
+                        +button('', true, '/form-aurinko').--regular.--professional
+                            span Get Started
+
+                +b.card.--professional
+                    +e.wrapper.--professional
+                        +title('h2', 'Enterprise').--h2.--border.--enterprise
+                        +title('h3', 'For companies with special needs or&nbsp;many active users.').--h3.--plan-card
+                        +list({
+                            'items':[{
+                                    'content': 'Volume discounts'
+                                },
+                                {
+                                    'content': 'Annual contract'
+                                },
+                                {
+                                    'content': 'Faster, prioritized support'
+                                },
+                                {
+                                    'content': 'Personalized optimizations'
+                            }]
+                        })
+                    +e.buttons.--professional
+                        +button('', true, '/bouble-menu-pebble').--regular.--enterprise
+                            span Contact us
+
+    +b.questions
+        .b-container
+            +e.wrapper
+                +title('h2', 'Frequently asked questions:').--h2.--questions
+                include section/accordion.pug
+                +accordion({'items': [{
+                            'header': 'Do&nbsp;you offer a&nbsp;free trial?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                        },{
+                            'header': 'How many email accounts can&nbsp;I connect with Pebbles?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                        },{
+                            'header': 'What payment options do&nbsp;I&nbsp;have?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                    }]
+                }).--pebbles

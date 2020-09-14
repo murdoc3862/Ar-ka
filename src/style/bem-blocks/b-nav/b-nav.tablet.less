@@ -1,0 +1,182 @@
+/* 768++  */
+.b-nav {
+    margin: 0 0 40px;
+
+    &__item {
+        margin: 0 0 18px;
+
+        &--inner {
+            margin: 25px 0 0;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-nav {
+        margin: 0;
+
+        &__list {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        &__item {
+            margin: 0 33px 0 0;
+            order: 0;
+            text-align: left;
+
+            &--inner {
+                background: transparent;
+                border-radius: 0;
+                margin: 0 30px 0 0;
+                order: 0;
+                position: relative;
+            }
+        }
+
+        &__link {
+            font-size: 15px;
+            line-height: 30px;
+            transition: color @animation-time ease-out;
+            white-space: nowrap;
+
+            &--inner {
+                .nunito-bold;
+                background: transparent;
+                border-radius: 0;
+                color: @cl-very-dark-grayish-blue;
+                display: block;
+                font-size: 15px;
+                line-height: 30px;
+                position: relative;
+                padding: 0 12px 0 0;
+            }
+
+            .no-touchevents &:hover,
+            .touchevents &:active {
+                color: @cl-light-gray;
+            }
+        }
+
+        &__nav-text {
+            span {
+                display: none;
+            }
+
+            &--inner {
+                padding: 0;
+
+                span {
+                    .nunito-bold;
+                    display: inline-block;
+                    font-size: 15px;
+                    line-height: 30px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        &__inner-list {
+            display: none;
+
+            &.open {
+                background: @cl-white;
+                border-radius: 16px;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+                display: block;
+                padding: 41px 45px 45px 38px;
+                position: absolute;
+                top: 60px;
+                width: 400px;
+                left: -35px;
+
+                &:after {
+                    border: 10px solid transparent;
+                    border-bottom-color: @cl-white;
+                    border-top: 0;
+                    content: '';
+                    height: 0;
+                    left: 77px;
+                    position: absolute;
+                    top: -10px;
+                    width: 0;
+                }
+            }
+        }
+
+        &__inner-item {
+            &:not(:last-child) {
+                margin: 0 0 32px;
+            }
+        }
+
+        &__inner-link {
+            display: flex;
+            align-items: center;
+        }
+
+        &__item-logo-wrapper {
+            display: none;
+
+            &--desktop {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 64px;
+                height: 64px;
+                background: @cl-snow;
+                border-radius: 15px;
+                line-height: 64px;
+                margin: 0 22px 0 0;
+            }
+
+            .no-touchevents .b-nav__inner-link:hover &,
+            .touchevents .b-nav__inner-link:active & {
+                background: linear-gradient(90deg, #EF4223 0%, #EF4323 0.01%, #F7931E 100%);
+
+                svg path {
+                    fill: @cl-white;
+                }
+            }
+
+            .b-nav__inner-link.inactive & {
+                color: @cl-light-grayish-blue;
+
+                svg path {
+                    fill: @cl-light-gray;
+                }
+            }
+        }
+
+        &__title,
+        &__text {
+            display: block;
+        }
+
+        &__title {
+            .nunito-bold;
+            color: @cl-very-dark-grayish-blue;
+            font-size: 18px;
+            line-height: 30px;
+
+            .no-touchevents .b-nav__inner-link:hover &,
+            .touchevents .b-nav__inner-link:active & {
+                color: @cl-dark-moderate-orange;
+            }
+
+            .b-nav__inner-link.inactive & {
+                color: @cl-light-grayish-blue;
+            }
+        }
+
+        &__text {
+            color: @cl-very-dark-grayish-blue;
+            font-size: 13px;
+            line-height: 18px;
+
+            .b-nav__inner-link.inactive & {
+                color: @cl-light-gray;
+            }
+        }
+    }
+}

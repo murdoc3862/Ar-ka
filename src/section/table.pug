@@ -1,0 +1,58 @@
+//- ====================
+//- aurinko: table
+//- 29-07-2020: sashakasha
+//- --------------------
+//- Table
+//- ====================
+
+mixin table(title, edition_name, data)
+    include ui-kit/icon.pug
+
+    +b.table
+        if edition_name == true
+            +e.caption
+                +e('span').edition-name.--integrated Integrated Plan
+                +e('span').edition-name.--custom Custom Plan
+        if edition_name == true
+            +e.head.--caption
+                +e.row.--head
+                    +e.cell.--head.--title
+                        +e('span').title #{title}
+                    +e.cell.--head.--mobile.--integrated
+                        +e('span').edition-name.--integrated Integrated Plan
+                    +e.cell.--head.--mobile.--custom
+                        +e('span').edition-name.--custom Custom Plan
+        else
+            +e.head
+                +e.row.--head
+                        +e.cell.--head.--title
+                            +e('span').title #{title}
+        +e.body
+            each item, index in data.items
+                +e.row
+                    +e.cell
+                        +e('span').feature-name #{item.feature_name}
+                    +e.cell.--integrated
+                        +e('span').check
+                            +icon('check').--check.--integrated
+                    +e.cell.--custom
+                        +e('span').check
+                            +icon('check').--check.--custom
+
+
+mixin table-yoxel(title, data)
+    include ui-kit/icon.pug
+
+    +b.table.--yoxel
+        +e.head
+            +e.row.--head
+                +e.cell.--head.--title
+                    +e('span').title #{title}
+        +e.body
+            each item, index in data.items
+                +e.row
+                    +e.cell
+                        +e('span').feature-name #{item.feature_name}
+                    +e.cell.--integrated
+                        +e('span').check
+                            +icon('check').--check.--integrated

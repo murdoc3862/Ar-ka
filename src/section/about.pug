@@ -1,0 +1,40 @@
+//- ====================
+//- aurinko: about
+//- 16-07-2020: sashakasha
+//- --------------------
+//- About
+//- ====================
+
+mixin about(data)
+    include ui-kit/link.pug
+    include ui-kit/list.pug
+    include ui-kit/title.pug
+
+    +b.about
+        .b-container
+            +e.wrapper
+                +e.desc
+                    +title('h2', 'Inbox plugin&nbsp;&mdash; data at&nbsp;your users fingertips').--h2.--about
+                    +e.text-wrapper
+                        +e.text
+                            p Aurinko has built a&nbsp;highly customizable inbox plugin for CRM, project management, human resources, accounting, marketing and other platform providers that would like their users to&nbsp;access their platforms from within their inboxes.
+                            p
+                                +link('Contact us', true, '/form-aurinko')
+                                |  to&nbsp;learn more about our inbox plugin.
+                        +e.icon-wrapper
+                            +e('img').icon(src='images/inhtml/icon-inbox.svg', alt)
+                    +title('h3', 'The plugin is&nbsp;capable&nbsp;of:').--h3.--color.--m30
+                    +list({
+                        'items':[{
+                                'content': 'Instantly showing platform data in&nbsp;users&rsquo; inboxes. Aurinko inbox app surfaces relevant data based on&nbsp;emails, contacts, tasks and/or meeting fields.'
+                            },
+                            {
+                                'content': 'Let your users quickly create, read, update and delete calendar invites, tasks, leads and contacts right from their inboxes.'
+                            },
+                            {
+                                'content': 'Simplifying activity capture&nbsp;&mdash; allow your users to&nbsp;easily log calendar events, tasks, contacts, leads, emails and attachments to&nbsp;your platform and associate them with the right opportunities, contacts and/or leads.'
+                            },
+                            {
+                                'content': 'Automating follow-up process&nbsp;&mdash; users can prepare follow-up sequences once and let API logic send follow-up emails for them. Aurinko monitors email threads and sends follow-up emails automatically if&nbsp;no&nbsp;response is&nbsp;received.'
+                        }]
+                    }).--marked.--curved-zone

@@ -1,0 +1,235 @@
+/* 320++  */
+.b-button {
+    .nunito-bold();
+    background: linear-gradient(270deg, @cl-vivid-orange, @cl-vivid-red, transparent, transparent);
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    border-radius: 22px;
+    border: 1px solid @cl-vivid-orange;
+    color: @cl-vivid-orange;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 6px 24px;
+    text-transform: uppercase;
+    transition: all .7s ease-out;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+        background-position: 99% 50%;
+        border-color: transparent;
+        color: @cl-white;
+    }
+
+    &--color {
+        background-color: @cl-vivid-orange;
+        color: @cl-white;
+        height: 44px;
+        line-height: 42px;
+        padding: 0 24px;
+
+        &-position {
+            line-height: 38px;
+        }
+    }
+
+    &--start {
+        background: linear-gradient(270deg, @cl-vivid-orange, @cl-vivid-red, @cl-white, @cl-white);
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+        border-color: @cl-white;
+        border-radius: 24px;
+        color: @cl-vivid-orange;
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 40px;
+    }
+
+    &--header {
+        display: none;
+    }
+
+    &--menu {
+        border-color: transparent;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 22px;
+
+        &.b-button--color {
+            background: linear-gradient(270deg, @cl-vivid-orange, @cl-vivid-red, transparent, transparent);
+            background-position: 1% 50%;
+            background-size: 300% 300%;
+            color: @cl-vivid-orange;
+            border-color: @cl-vivid-orange;
+        }
+
+        &:not(:last-child) {
+            margin: 0 0 18px;
+        }
+    }
+
+    &--navbar {
+        color: @cl-white;
+        font-size: 9px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 14px;
+    }
+
+    &--pebbles {
+        background: linear-gradient(270deg, @cl-purple, @cl-dark-pink, transparent, transparent);
+        background-color: @cl-purple;
+        border-color: @cl-purple;
+    }
+
+    &--yoxel {
+        background: linear-gradient(270deg, @cl-dark-blue, @cl-light-blue, transparent, transparent);
+        background-color: @cl-dark-blue;
+        border-color: @cl-dark-blue;
+    }
+
+    &--price-block {
+        height: 44px;
+        line-height: 44px;
+        padding: 0 24px;
+        background: linear-gradient(270deg, @cl-dark-blue, @cl-light-blue, @cl-white, @cl-white);
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+        border-color: @cl-dark-blue;
+        color: @cl-dark-blue;
+    }
+
+    &--yoxel,
+    &--pebbles,
+    &--price-block {
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+    }
+
+    &--regular {
+        border-radius: 24px;
+        font-size: 14px;
+        height: 48px;
+        letter-spacing: .01em;
+        line-height: 48px;
+        padding: 0 18px;
+        text-align: center;
+        text-transform: none;
+        width: 100%;
+
+        & > span {
+            text-decoration: underline;
+        }
+
+        .no-touchevents &:hover,
+        .touchevents &:active {
+            // background-color: @cl-vivid-orange;
+            // color: @cl-white;
+            background: @cl-white;
+            color: @cl-cinnabar;
+            border-color: @cl-vivid-orange;
+        }
+    }
+
+    &--integrated {
+        border-color: @cl-vivid-orange;
+        box-shadow: 0 7px 21px rgba(0, 0, 0, .08);
+        color: @cl-vivid-orange;
+        margin: 0 0 64px;
+        background: linear-gradient(270deg, @cl-vivid-orange, @cl-vivid-red, @cl-white, @cl-white);
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+
+        & > span {
+            margin: 0 16px 0 0;
+        }
+
+        .no-touchevents &:hover,
+        .touchevents &:active {
+            color: @cl-vivid-orange;
+
+            .icon-toggle {
+                color: @cl-vivid-orange!important;
+            }
+        }
+    }
+
+    &--calculator {
+        border-radius: 28px;
+        font-size: 18px;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 34px;
+        text-align: center;
+    }
+
+    &--collapsed {
+        border-radius: 20px;
+        font-size: 15px;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 24px;
+        text-transform: none;
+    }
+
+    &--collapsed-pebbles {
+        background: linear-gradient(270deg, @cl-purple, @cl-dark-pink, @cl-white, @cl-white);
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+        border-color: @cl-purple;
+        color: @cl-purple;
+    }
+
+    &--collapsed-yoxel {
+        background: linear-gradient(270deg, @cl-dark-blue, @cl-light-blue, @cl-white, @cl-white);
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+        border-color: @cl-dark-blue;
+        color: @cl-dark-blue;
+    }
+
+    &--professional {
+        background: linear-gradient(270deg, @cl-purple, @cl-dark-pink, @cl-white, @cl-white);
+        border-color: @cl-purple;
+        color: @cl-purple;
+    }
+
+    &--enterprise {
+        background: linear-gradient(270deg, @cl-pigment-green, #00723a, @cl-white, @cl-white);
+        border-color: @cl-pigment-green;
+        color: @cl-pigment-green;
+    }
+
+    &--contact-us {
+        background: linear-gradient(270deg, @cl-dark-blue, @cl-light-blue, @cl-white, @cl-white);
+        border-color: @cl-light-blue;
+        color: @cl-light-blue;
+        width: calc(~'100% + 30px');
+    }
+
+    &--custom {
+        border-color: @cl-cinnabar;
+        color: @cl-cinnabar;
+        background: linear-gradient(270deg, @cl-vivid-orange, @cl-vivid-red, @cl-white, @cl-white);
+    }
+
+    &--professional,
+    &--enterprise,
+    &--custom,
+    &--contact-us {
+        background-position: 1% 50%;
+        background-size: 300% 300%;
+    }
+
+    &--custom,
+    &--enterprise,
+    &--professional {
+        width: calc(~'100% + 30px');
+    }
+
+
+    &--desktop {
+        display: none;
+    }
+}

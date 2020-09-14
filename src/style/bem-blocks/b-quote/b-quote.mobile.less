@@ -1,0 +1,46 @@
+.b-quote {
+    padding: 11px 25px 90px 55px;
+    background: linear-gradient(180deg, #FFFFFF -3.74%, rgba(255, 255, 255, 0) 50.3%), #E9DAC8;
+    position: relative;
+
+    &__image-wrapper {
+        border-radius: 50%;
+        height: 152px;
+        margin:0 0 39px 29px;
+        overflow: hidden;
+        width: 152px;
+    }
+
+    &__text {
+        .nunito-bolditalic();
+        font-size: 18px;
+        line-height: 25px;
+        margin: 0 0 31px;
+        color: @cl-very-dark-grayish-blue;
+    }
+
+    &__author {
+        font-size: 20px;
+        line-height: 24px;
+        color: @cl-dark-moderate-orange;
+        .nunito-bold();
+        margin-bottom: 5px;
+    }
+
+    &__post {
+        font-size: 15px;
+        line-height: 22px;
+        color: @cl-light-grayish-blue;
+    }
+
+    &__cache-top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+
+    .b-container {
+        padding: 0;
+    }
+}

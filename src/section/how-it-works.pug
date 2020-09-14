@@ -1,0 +1,24 @@
+//- ====================
+//- aurinko: how-it-works
+//- 16-07-2020: sashakasha
+//- --------------------
+//- How-it-works
+//- ====================
+
+mixin how-it-works(data)
+    include ui-kit/link.pug
+    include ui-kit/title.pug
+
+    +b.how-it-works(class!=attributes.class)
+        .b-container
+            +e.wrapper
+                +e.desc
+                    +title('h2', '').--h2.--how-it-works !{data.title}
+                    +e('div').text-des #{data.text}
+                    +e.list
+                        each item in data.items
+                            +e.item
+                                +e.number !{item.number}
+                                +title('h3', item.title).--h3.--color.--m20
+                                +e.text
+                                    p !{item.text}

@@ -1,0 +1,65 @@
+/* 768++  */
+.b-icon {
+    &--check {
+        font-size: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    &--accordion {
+        right: 43px;
+    }
+
+    &--button {
+        font-size: 12px;
+        height: 12px;
+        line-height: 12px;
+    }
+
+    &--logo-part2 {
+        font-size: 20px;
+    }
+
+    &--navbar {
+        font-size: 12px;
+        height: 12px;
+        line-height: 12px;
+
+        .b-navbar__title-link--yoxel & {
+            margin: 6px 0 0;
+        }
+
+        .b-navbar__title-link--pebbles & {
+            margin: 14px 0 0;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-icon {
+        &--accordion {
+            right: 52px;
+        }
+
+        &--navbar {
+            display: none;
+        }
+
+        &--nav {
+            display: inline-flex;
+            color: @cl-very-dark-grayish-blue;
+            height: 5px;
+            line-height: 5px;
+            font-size: 5px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin: -3px 0 0;
+
+            .no-touchevents .b-nav__link:hover &,
+            .touchevents .b-nav__link:active & {
+                color: @cl-light-gray;
+            }
+        }
+    }
+}

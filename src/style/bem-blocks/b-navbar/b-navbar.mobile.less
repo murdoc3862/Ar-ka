@@ -1,0 +1,117 @@
+/* 320++  */
+.b-navbar {
+    height: 64px;
+    margin: 64px 0 0;
+
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &__wrapper {
+        background: @cl-white;
+        box-shadow: 0 3px 30px rgba(0, 0, 0, .1);
+        height: 64px;
+        position: relative;
+        z-index: 3;
+    }
+
+    &__comp {
+        align-items: center;
+        display: flex;
+        height: 64px;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    &__title-link {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__logo-wrapper {
+        display: block;
+        margin: 0 12px 0 0;
+
+        .b-navbar__title-link--yoxel & {
+            height: 32px;
+            width: 78px;
+        }
+
+        .b-navbar__title-link--pebbles & {
+            height: 24px;
+            width: 115px;
+        }
+    }
+
+    &__logo {
+        height: 100%;
+    }
+
+    &__list {
+        display: none;
+    }
+
+    &__collapsed-wrapper {
+        display: none;
+        position: relative;
+        z-index: 2;
+
+        &.open {
+            background: @cl-white;
+            box-shadow: 0 3px 30px rgba(0, 0, 0, .1);
+            display: block;
+
+        }
+    }
+
+    &__collapsed-list {
+        padding: 0;
+    }
+
+    &__collapsed-item {
+        align-items: center;
+        display: flex;
+        height: 64px;
+        justify-content: center;
+        list-style: none;
+        position: relative;
+
+        &:not(:last-child) {
+            &:after {
+                background: @cl-light-gray;
+                bottom: 0;
+                content: '';
+                height: 1px;
+                left: -15px;
+                opacity: .3;
+                position: absolute;
+                right: -15px;
+            }
+        }
+    }
+
+    &__collapsed-link {
+        .nunito-bold;
+        color: @cl-very-dark-grayish-violet;
+        display: block;
+        font-size: 15px;
+        line-height: 30px;
+
+        &--yoxel {
+            .no-touchevents &:hover,
+            .touchevents &:active {
+                color: @cl-dark-blue;
+            }
+        }
+
+        &--pebbles {
+            .no-touchevents &:hover,
+            .touchevents &:active {
+                color: @cl-purple;
+            }
+        }
+    }
+}

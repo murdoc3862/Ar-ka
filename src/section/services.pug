@@ -1,0 +1,24 @@
+//- ====================
+//- aurinko: services
+//- 05-04-2020: sashakasha
+//- --------------------
+//- Services
+//- ====================
+
+mixin services(data)
+    include ui-kit/title.pug
+
+    +b.services
+        .b-container
+            +e.desc
+                +title('h2', 'Aurinko API benefits').--h2.--services
+            +e.wrapper
+                each item in data.items
+                    +e.item
+                        +e.image-wrapper
+                            if item.src
+                                +e('img').image(class=`${ item.mod ? item.mod : '' }`, src=item.src, alt)
+                        +e.desc
+                            +title('h3', item.title).--h3.--color.--m20.--services-item
+                            +e.text
+                                p !{item.text}

@@ -1,0 +1,22 @@
+//- ====================
+//- aurinko: features
+//- 09-04-2020: sashakasha
+//- --------------------
+//- Features
+//- ====================
+
+mixin features(data)
+    include ui-kit/title.pug
+
+    +b.features
+        .b-container
+            +e.wrapper
+                each item in data.items
+                    +e.item
+                        +e.icon-wrapper(class=`${ item.mod ? item.mod : '' }`)
+                            +e('img').icon(src=item.src)
+                        +e.desc
+                            +title('h3', item.title).--h3.--m20
+                            +b('ul').list
+                                each list, index in item.lists
+                                    +e('li').item !{list}

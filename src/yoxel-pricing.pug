@@ -1,0 +1,150 @@
+//- ====================
+//- aurinko: yoxel-pricing
+//- 23-07-2020: sashakasha
+//- --------------------
+//- Yoxel Pricing
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'yoxel-pricing'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Yoxel Pricing';
+    - var yoxel = true;
+
+//- Выводим content
+block content
+    include section/accordion.pug
+    include section/price-block.pug
+    include section/table.pug
+    include section/ui-kit/button.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/title.pug
+
+    +b.heading.--pricing.--yoxel-pricing
+        .b-container
+            +e.wrapper
+                +title('h1', 'Yoxel Pricing').--h1.--heading.--yoxel-pricing
+
+    +b.pricing
+        .b-container
+            +e.wrapper
+                +b.card.--yoxel.--info
+                    +title('h3', 'Simple, pay-as-you-go pricing. Pay only for what you need for as&nbsp;long as&nbsp;you need&nbsp;it.').--h3.--plan-card
+                    +list({
+                        'items':[{
+                                'content': '30-day free trial'
+                            },
+                            {
+                                'content': 'No&nbsp;credit card required to&nbsp;signup'
+                            },
+                            {
+                                'content': 'Includes phone, chat and email support'
+                            },
+                            {
+                                'content': 'Personalized optimizations'
+                        }]
+                    })
+
+                +price-block({'items': [{
+                            'title': 'Starter',
+                            'sync_frequency': 'every hour',
+                            'price': '$10'
+                        },{
+                            'title': 'Professional',
+                            'sync_frequency': 'every 30 minutes',
+                            'price': '$15'
+                        },{
+                            'title': 'Strategic',
+                            'sync_frequency': 'every 10 minutes',
+                            'price': '$20'
+                    }]
+                })
+
+                +b.card.--yoxel
+                    +title('h2', 'Custom').--h2.--border.--card-yoxel
+                    +e.wrapper
+                        +title('h3', 'For companies with special needs or&nbsp;many active users.').--h3.--plan-card
+                        +list({
+                            'items':[{
+                                    'content': 'Volume discounts'
+                                },
+                                {
+                                    'content': 'Annual contract'
+                                },
+                                {
+                                    'content': 'Faster, prioritized support'
+                                },
+                                {
+                                    'content': 'Personalized optimizations'
+                            }]
+                        })
+                    +e.buttons.--yoxel
+                        +button('', true, '/bouble-menu-yoxel').--regular.--contact-us
+                            span Contact us
+
+
+    +b.feature-editions
+        .b-container
+            +e.wrapper
+                +title('h2', 'What is&nbsp;included in&nbsp;every plan').--h2.--feature-editions.--yoxel-pricing
+
+                +table-yoxel('Features',
+                        {'items': [{
+                            'feature_name': 'Full Aurinko platform access (calendar, contacts, email and tasks)'
+                        },{
+                            'feature_name': 'Unlimited API calls'
+                        },{
+                            'feature_name': 'Bi-directional sync'
+                        },{
+                            'feature_name': 'Event-based sync'
+                        },{
+                            'feature_name': 'Push notifications'
+                        },{
+                            'feature_name': 'Attachments sync'
+                        },{
+                            'feature_name': 'Create, read, modify and delete calendar events, emails and contacts from any integrated service'
+                    }]
+                })
+
+                +table-yoxel('Security and Privacy:',
+                        {'items': [{
+                            'feature_name': 'Pass through API'
+                        },{
+                            'feature_name': 'Pre-built security'
+                        },{
+                            'feature_name': 'Authentication scopes'
+                        },{
+                            'feature_name': 'Hosted authentication'
+                        },{
+                            'feature_name': 'Data encryption'
+                        },{
+                            'feature_name': '99.9% reliability'
+                    }]
+                })
+
+                +table-yoxel('Scalability:',
+                        {'items': [{
+                            'feature_name': 'Webhooks-based API'
+                    }]
+                })
+
+    +b.questions
+        .b-container
+            +e.wrapper
+                +title('h2', 'Frequently asked questions:').--h2.--questions.--yoxel-pricing
+                +accordion({'items': [{
+                            'header': 'Do&nbsp;you offer a&nbsp;free trial?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                        },{
+                            'header': 'How many email accounts can&nbsp;I connect with Pebbles?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                        },{
+                            'header': 'What payment options do&nbsp;I&nbsp;have?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!'
+                    }]
+                }).--yoxel

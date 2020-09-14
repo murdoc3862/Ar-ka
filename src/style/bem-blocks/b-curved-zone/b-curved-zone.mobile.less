@@ -1,0 +1,113 @@
+/* 320++  */
+.b-curved-zone {
+    position: relative;
+
+    &--top {
+        margin: 0 0 2px;
+        padding: 15% 0 23%;
+    }
+
+    &--bottom {
+        margin: 0 0 70px;
+        padding: 29% 0 20%;
+    }
+
+    &__background {
+        .b-curved-zone--bottom & {
+            background: linear-gradient(to right, rgba(248, 156, 50, 1) 0%, rgba(248, 159, 57, 1) 2%, rgba(251, 193, 127, 1) 15%, rgba(253, 220, 182, 1) 27%, rgba(254, 239, 222, 1) 37%, rgba(255, 251, 246, 1) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 251, 246, 1) 55%, rgba(254, 239, 222, 1) 62%, rgba(252, 220, 182, 1) 72%, rgba(250, 193, 127, 1) 83%, rgba(248, 160, 57, 1) 95%, rgba(247, 147, 30, 1) 100%);
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .b-curved-zone--top & {
+            background: @cl-light-grayish-orange;
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+
+            &:after {
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(233, 218, 200, 1) 70%, rgba(233, 218, 200, 1) 100%);
+                content: '';
+                height: 50%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__cache-top,
+    &__cache-bottom {
+        left: -4px;
+        max-width: none;
+        position: absolute;
+        width: calc(~'100% + 8px');
+        z-index: 1;
+    }
+
+    &__cache-top {
+        top: -2px;
+    }
+
+    &__cache-bottom {
+        bottom: -2px;
+    }
+
+    &__text-wrapper {
+        margin: 0 0 56px;
+    }
+
+    &__icon-wrapper {
+        height: 185px;
+        margin: 0 0 0 -30px;
+        text-align: center;
+    }
+
+    &__icon {
+        height: 100%;
+    }
+
+    &__desc {
+        margin: 0 auto;
+        padding: 0 10px 0 40px;
+    }
+
+    &__text {
+        color: @cl-light-grayish-blue;
+        font-size: 15px;
+        line-height: 22px;
+
+        & > p {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 0 22px;
+            }
+        }
+
+        &--curved-zone-bottom {
+            color: @cl-very-dark-grayish-blue;
+            font-size: 18px;
+            line-height: 25px;
+            margin: 0 0 56px;
+
+            & > p {
+                margin: 0;
+
+                &:not(:last-child) {
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+}

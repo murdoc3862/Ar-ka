@@ -1,0 +1,33 @@
+.b-list-wrap {
+    padding: 37px 0 45px;
+
+    &__ul {
+        padding-left: 50px;
+    }
+
+    &__li {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 5px;
+
+        .icon-check {
+            left: -50px;
+            top: -4px;
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        padding: 0;
+
+        &--form-aurinko {
+            width: 43%;
+        }
+
+        &__li {    
+            .icon-check {
+                top: 6px;
+            }
+        }
+    }
+}

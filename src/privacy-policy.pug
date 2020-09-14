@@ -1,0 +1,85 @@
+//- ====================
+//- aurinko: main
+//- 09-04-2020: sashakasha
+//- --------------------
+//- Privacy Policy
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'privacy-policy'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Privacy Policy';
+
+//- Выводим content
+block content
+    +b.content
+        +e.image-wrapper
+            +e('img').image(src='/images/inhtml/bright.png', alt)
+        .b-container
+            +e.wrapper
+                h1 Privacy Policy
+                h3 Effective February 2018
+                p YOXEL, Inc., a&nbsp;Delaware corporation (&laquo;YOXEL&raquo;,&nbsp;&laquo;us&raquo;, or&nbsp;&laquo;we&raquo;) respects your privacy. We&nbsp;created this Privacy Policy to&nbsp;let you know what information we&nbsp;collect and how we&nbsp;use&nbsp;it, as&nbsp;well as&nbsp;our practices regarding such information.
+                .list
+                    p This Privacy Policy applies&nbsp;to:
+                    ul
+                        li The website https://Threads.ai/ (the <b>&laquo;Website&raquo;</b>); and
+                        li The Threads service and applications (the <b>&laquo;Service&raquo;</b> or&nbsp;<b>&laquo;Threads&raquo;</b>);
+                .list
+                    p This Privacy Policy does not apply&nbsp;to:
+                    ul
+                        li Information we&nbsp;collect offline or&nbsp;by&nbsp;any other means (such as&nbsp;through other products or&nbsp;services we&nbsp;may offer); and
+                        li Information collected by&nbsp;our affiliates or&nbsp;any other third parties, which may have their own privacy policies.
+                p Please read this Privacy Policy carefully and save&nbsp;it. If&nbsp;you do&nbsp;not agree with&nbsp;it, you should not use the Service or&nbsp;access the Website. By&nbsp;using the Service, the Website or&nbsp;by&nbsp;accepting or&nbsp;responding to&nbsp;messages or&nbsp;chat requests from users of&nbsp;the Service (including via email), you consent to&nbsp;the practices prescribed in&nbsp;this Privacy Policy.
+                h2 What information does YOXEL collect?
+                p Personal Information. When we&nbsp;refer to&nbsp;&laquo;Personal Information&raquo; in&nbsp;this Privacy Policy, we&nbsp;mean any information by&nbsp;which you may be&nbsp;personally identified or&nbsp;contacted, whether online or&nbsp;offline. When you use the Service, fill out any forms located on&nbsp;the Website or&nbsp;send or&nbsp;respond to&nbsp;messages or&nbsp;chats via the Service, we&nbsp;may collect certain Personal Information from you, such as&nbsp;your first and last name, email address, phone number and company name or&nbsp;other employment information. Additionally, if&nbsp;you send messages via the Service, whether you do&nbsp;so&nbsp;via an&nbsp;email provider or&nbsp;a&nbsp;third-party messaging platform, we&nbsp;may view the content of&nbsp;those messages, including any Personal Information you choose to&nbsp;provide in&nbsp;those messages. It&nbsp;is&nbsp;always your choice whether or&nbsp;not to&nbsp;provide Personal Information. If&nbsp;you choose not to&nbsp;provide requested Personal Information, you may not be&nbsp;able to&nbsp;participate in&nbsp;certain activities or&nbsp;use certain features of&nbsp;the Service.
+                p Technical Information. We&nbsp;may also collect and use technical data and related information, such as&nbsp;information about your device, system and application software, peripherals and other data related to&nbsp;your interactions with the Service (&laquo;Technical Information&raquo;). We&nbsp;automatically receive and record information from your browser about the devices you use to&nbsp;access the Services. This includes things like&nbsp;IP addresses, the type of&nbsp;browser and device you use, the webpage you visited before coming to&nbsp;our sites, and identifiers associated with your devices. Your devices (depending on&nbsp;their settings) may also transmit location information to&nbsp;the Services. YOXEL does not consider this information to&nbsp;be&nbsp;Personal Information. YOXEL owns all Technical Information and may use it&nbsp;for any lawful purpose.
+                p Third-Party Platform Information. We&nbsp;may also collect information (including Personal Information) about you from various third-party messaging platforms (e.g. Slack) (each, a&nbsp;&laquo;Messaging Platform&raquo;) through their applicable APIs or&nbsp;otherwise (&laquo;Messaging Information&raquo;).
+                p Surveys. From time to&nbsp;time we&nbsp;may collect information from customers via surveys. This information is&nbsp;used solely to&nbsp;improve the content of&nbsp;our web pages and the quality of&nbsp;our service and is&nbsp;not shared with any third parties.
+                p Other Information You Voluntarily Disclose. Certain features of&nbsp;the Service are designed to&nbsp;display Information that you choose to&nbsp;provide to&nbsp;other users (such as&nbsp;sharing email snippets across Messaging Platforms) or&nbsp;to&nbsp;other third parties (such as&nbsp;Messaging Platforms). Please keep in&nbsp;mind that whenever you voluntarily disclose Information through the Service, that Information can be&nbsp;seen by&nbsp;those users or&nbsp;third parties to&nbsp;whom you send that Information. We&nbsp;are not responsible for the security or&nbsp;privacy of&nbsp;any Information you choose to&nbsp;submit in&nbsp;connection with these features.
+                h2 How does YOXEL use this Information?
+                p Except as&nbsp;described in&nbsp;this Privacy Policy or&nbsp;in&nbsp;our Terms of&nbsp;Service, Personal Information, Technical Information, Messaging Information (collectively, &laquo;Information&raquo;) that you provide or&nbsp;that we&nbsp;collect will be&nbsp;kept confidential and used to&nbsp;support your relationship with YOXEL.
+                p We&nbsp;may use your Information, including your Personal Information, as&nbsp;follows:
+                .list
+                    ul
+                        li To&nbsp;enable you to&nbsp;participate in&nbsp;interactive features of&nbsp;the Service (such as&nbsp;communications between users)
+                        li To&nbsp;provide services and customer support to&nbsp;you.
+                        li To&nbsp;improve, test, update, and monitor YOXEL&rsquo;s products and services for a&nbsp;better user experience.
+                        li To&nbsp;communicate with you, including about the Service or&nbsp;your account.
+                        li For any other purpose we&nbsp;may describe when you provide the Information.
+
+                p In&nbsp;addition, YOXEL and its third-party partners may also use the Information&nbsp;to: remember your Information so&nbsp;you will not have to&nbsp;re-enter it&nbsp;during a&nbsp;subsequent visit; help you efficiently access your Information after you sign&nbsp;in; diagnose or&nbsp;fix technology problems; and for security and fraud prevention purposes.
+                h3 Information We&nbsp;Share
+                p Except as&nbsp;described in&nbsp;this Privacy Policy, YOXEL does not share, rent or&nbsp;sell your Personal Information with third parties.
+                p YOXEL or&nbsp;its agents, vendors or&nbsp;contractors may disclose Information, including your Personal Information, to&nbsp;third parties in&nbsp;the following circumstances:
+                .list
+                    ul
+                        li To&nbsp;our agents, vendors or&nbsp;contractors that we&nbsp;use to&nbsp;support the internal operations of&nbsp;our business including the Service and the Website and who are required to&nbsp;keep the Information confidential and use it&nbsp;only for the purposes for which we&nbsp;disclose it&nbsp;to&nbsp;them;
+                        li To&nbsp;Messaging Platform providers in&nbsp;connection with our provision of&nbsp;the Service;
+                        li If&nbsp;required to&nbsp;do&nbsp;so&nbsp;by&nbsp;law, comply with legal process or&nbsp;to&nbsp;comply with a&nbsp;governmental or&nbsp;regulatory request;
+                        li To&nbsp;protect and defend the rights or&nbsp;property of&nbsp;YOXEL or&nbsp;its agents or&nbsp;contractors;
+                        li To&nbsp;enforce our Terms of&nbsp;Service or&nbsp;other YOXEL agreements;
+                        li To&nbsp;act in&nbsp;urgent circumstances to&nbsp;protect the personal safety of&nbsp;users of&nbsp;the Service, the Website or&nbsp;the public; and
+                        li As&nbsp;part of&nbsp;a&nbsp;transaction or&nbsp;potential transaction where YOXEL merges with another organization, files for bankruptcy, or&nbsp;sells its assets or&nbsp;capital stock.
+                h2 Security of&nbsp;Your Information
+                p We&nbsp;maintain physical, electronic, and procedural safeguards designed to&nbsp;protect the Information. Despite the actions and precautions we&nbsp;take, no&nbsp;data transmissions over the Internet can be&nbsp;guaranteed to&nbsp;be&nbsp;100% secure. Consequently, we&nbsp;cannot ensure or&nbsp;warrant the security of&nbsp;the Information and you acknowledge and agree that you transmit it&nbsp;to&nbsp;us at&nbsp;your own risk.
+                p We&nbsp;have put in&nbsp;place procedures to&nbsp;deal with any suspected data security breaches and will notify you and any applicable regulator of&nbsp;a&nbsp;suspected breach where we&nbsp;are legally required to&nbsp;do&nbsp;so.
+                p We&nbsp;will retain your Personal Information for as&nbsp;long as&nbsp;your account is&nbsp;active, or&nbsp;for the length of&nbsp;time needed to&nbsp;fulfill the purposes outlined in&nbsp;this Privacy Policy unless a&nbsp;longer retention period is&nbsp;required or&nbsp;permitted by&nbsp;law.
+                h3 Third-Party Websites, Services and Technologies
+                p We&nbsp;may provide links to&nbsp;third-party websites on&nbsp;the Website or&nbsp;in&nbsp;other communications to&nbsp;you. These links may appear as&nbsp;a&nbsp;specific domain name or&nbsp;URL or&nbsp;may be&nbsp;activated by&nbsp;clicking on&nbsp;an&nbsp;advertisement or&nbsp;other icon or&nbsp;graphic. Please be&nbsp;aware that other websites and services, including the websites of&nbsp;third parties that you connect with through the Service, may collect personally identifiable information about you. We&nbsp;cannot control and are not responsible for the information collection practices of&nbsp;any third-party websites, services or&nbsp;applications. We&nbsp;encourage you to&nbsp;carefully review their terms of&nbsp;use, privacy policies, and any other legal notifications before using or&nbsp;providing information through such websites, services or&nbsp;applications.
+                P Further, the Service may employ third party technologies that require you to&nbsp;accept such third party&rsquo;s terms. This Privacy Policy does not cover the information practices of&nbsp;those third-party technologies.
+                h3 International Transfers
+                p Information collected from you may be&nbsp;stored and processed in&nbsp;the United States or&nbsp;any other country in&nbsp;which YOXEL or&nbsp;its affiliates, subsidiaries, agents or&nbsp;contractors maintain facilities. If&nbsp;you are accessing the Service from the European Union or&nbsp;other regions with laws governing data collection and use, please note that you are agreeing to&nbsp;the transfer of&nbsp;your data to&nbsp;the United States and processing globally. By&nbsp;providing your Information, you consent to&nbsp;any transfer and processing in&nbsp;accordance with this Privacy Policy.
+                p To&nbsp;transfer Personal Information from the EEA to&nbsp;the U.S. we&nbsp;use standard contractual clauses (also known as&nbsp;&laquo;Model Clauses&raquo;). The Model Clauses have been adopted by&nbsp;the European Commission and are deemed to&nbsp;provide adequate safety mechanisms to&nbsp;transfer Personal Information to&nbsp;the U.S. You can request a&nbsp;copy of&nbsp;our Model Clauses by&nbsp;emailing&nbsp;us as&nbsp;indicated below.
+                h3 Children&rsquo;s Privacy
+                p The Website and the Service are not intended for children under the age of&nbsp;13. We&nbsp;do&nbsp;not knowingly collect Information from children under 13. If&nbsp;you believe that we&nbsp;may have collected Information from a&nbsp;child under the age of&nbsp;13, please contact&nbsp;us at privacy@yoxel.com.
+                h2 Changes to&nbsp;this Privacy Policy
+                p This is&nbsp;our entire Privacy Policy and it&nbsp;replaces any earlier version. We&nbsp;may change this Privacy Policy by&nbsp;posting a&nbsp;new version on&nbsp;the Website or&nbsp;through the Service, and it&nbsp;is&nbsp;your responsibility to&nbsp;review this Privacy Policy periodically. If&nbsp;we&nbsp;make material changes to&nbsp;our practices regarding the collection, use and sharing of&nbsp;your Personal Information, we&nbsp;will notify you via e-mail to&nbsp;the email address you provide to&nbsp;us and/or through a&nbsp;notice on&nbsp;the Website home page or&nbsp;via the Service.
+                p When we&nbsp;do&nbsp;change the Privacy Policy, we&nbsp;will also revise the effective date. Your continued use of&nbsp;the Service after such date constitutes your agreement to&nbsp;this Privacy Policy and any updates.
+                h2 Contacting YOXEL
+                p For questions or&nbsp;comments regarding this Privacy Policy, please contact&nbsp;us at&nbsp;YOXEL, Inc., 503&nbsp;W 38th Street, Austin TX&nbsp;78705, and privacy@YOXEL.

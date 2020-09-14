@@ -1,0 +1,13 @@
+//- ====================
+//- aurinko: block-image
+//- 07-04-2020: sashakasha
+//- --------------------
+//- Block-image
+//- ====================
+
+mixin block-image(src, label)
+    +b.block-image(class!=attributes.class)
+        if src
+            +e('img').insert(src=src, alt='')
+        if label
+            +e.label  #{label}

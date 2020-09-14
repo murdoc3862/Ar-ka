@@ -1,0 +1,51 @@
+/* 320++  */
+.b-accordion {
+    &__group {
+        background: @cl-snow;
+        border-radius: 12px;
+        border: 1px solid @cl-snow;
+        margin: 0 0 0 -30px;
+        transition:all 0.5s linear;
+        -moz-transition:all 0.5s linear;
+        -webkit-transition:all 0.5s linear;
+        -o-transition:all 0.5s linear;
+
+
+        &:not(:last-child) {
+            margin: 0 0 20px -30px;
+        }
+
+        &.active {
+            background: @cl-white;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, .1);
+            transition: .7s ease;
+        }
+    }
+
+    &__header {
+        cursor: pointer;
+        position: relative;
+        padding: 25px 67px 27px 28px;
+
+        span {
+            .nunito-bold();
+            display: block;
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+
+    &__content {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 0 29px 27px 29px;
+
+        & > p {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 0 10px;
+            }
+        }
+    }
+}

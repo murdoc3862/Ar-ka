@@ -1,0 +1,27 @@
+//- ====================
+//- aurinko: reviews
+//- 08-04-2020: sashakasha
+//- --------------------
+//- Reviews
+//- ====================
+
+mixin reviews(data)
+    include ui-kit/title.pug
+
+    +b.reviews
+        .b-container
+            +e.wrapper.-js-reviews-slider
+                each item in data.items
+                    +e.item
+                        +e.image-wrapper
+                            if item.src
+                                +e('img').image(src=item.src, alt)
+                        +e.desc
+                            +title('h3', item.title).--h3.--reviews
+                            if item.text
+                                +e.text
+                                    p !{item.text}
+                            if item.author
+                                +e.author !{item.author}
+                            if item.post
+                                +e.post !{item.post}

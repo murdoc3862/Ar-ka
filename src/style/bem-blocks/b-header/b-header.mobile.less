@@ -1,0 +1,133 @@
+/* 320++  */
+.b-header {
+    background: @cl-white;
+    height: 64px;
+    box-shadow: 0 3px 30px rgba(0,0,0,.1);
+
+    &--navbar {
+        background: @cl-snow;
+        box-shadow: none;
+    }
+
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        z-index: 4;
+    }
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        height: 64px;
+        padding: 0 10px;
+        justify-content: space-between;
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        height: 34px;
+        align-items: center;
+    }
+
+    &__logo {
+        height: 100%;
+    }
+
+    &__nav {
+        z-index: 4;
+    }
+
+    &__nav-burger {
+        border-bottom: 3px solid @cl-light-grayish-blue;
+        display: block;
+        height: 21px;
+        position: relative;
+        transition: border-bottom-color @animation-time ease;
+        width: 32px;
+        z-index: 6;
+
+        &:after,
+        &:before {
+            background: @cl-light-grayish-blue;
+            content: '';
+            height: 3px;
+            left: 0;
+            position: absolute;
+            transition: transform @animation-time ease;
+            width: 100%;
+        }
+
+        &:before {
+            top: 0;
+        }
+
+        &:after {
+            top: 50%;
+        }
+
+        &.open {
+            border-bottom-color: transparent;
+
+            &:after,
+            &:before {
+                top: 11px;
+            }
+
+            &:before {
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__buttons {
+        display: none;
+    }
+
+    &--color {
+        background-color: @cl-dark-moderate-orange;
+
+        &+main {
+            padding-top: 0;
+        }
+        .icon-logo-part2 {
+            color: @cl-white;
+        }
+    }
+
+    &--color &{
+        &__nav-burger {
+            border-color: @cl-white;
+
+            &::before,
+            &:after {
+                background-color: @cl-white;
+            }
+
+            &.open {
+                &::before,
+                &:after {
+                    background-color: @cl-light-grayish-blue;
+                }
+            }
+        }
+    }
+
+    &--color-light {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.734694) 21.35%, #FFFFFF 46.35%, rgba(255, 255, 255, 0.917886) 56.77%, rgba(255, 255, 255, 0.797872) 76.04%, rgba(255, 255, 255, 0.1) 100%), #F7931E;
+        &+main {
+            padding-top: 0;
+        }
+    }
+
+    &--none {
+        display: none;
+
+        &+ .b-navbar{
+            margin-top: 0;
+        }
+    }
+}

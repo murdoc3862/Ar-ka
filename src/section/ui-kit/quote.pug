@@ -1,0 +1,16 @@
+mixin quote(item)
+    +b.quote
+        .b-container
+            +e('img').cache-top(src='images/inhtml/curved-top-cache-top.svg', alt)
+            +e.item
+                +e.image-wrapper
+                    if item.src
+                        +e('img').image(src=item.src, alt)
+                +e.desc
+                    if item.text
+                        +e.text
+                            p !{item.text}
+                    if item.author
+                        +e.author !{item.author}
+                    if item.post
+                        +e.post !{item.post}

@@ -1,0 +1,15 @@
+//- ====================
+//- aurinko: footer
+//- 06-04-2020: sashakasha
+//- --------------------
+//- Footer
+//- ===================
+mixin footer()
+    +b.footer
+        .b-container
+            +e.wrapper
+                +e.menu
+                    +e('a').link(href='/terms-of-service', title='Terms of Service') Terms of Service
+                    +e('a').link(href='/privacy-policy', title='Privacy Policy') Privacy Policy
+                    +e('a').link(href='javascript:void(0);', title='Documentation') Documentation
+                +e.copy &copy;&nbsp;Aurinko 2020

@@ -1,0 +1,109 @@
+/* 320++  */
+.b-calculator {
+    background: linear-gradient(90deg, rgba(249, 249, 249, .3) 0%, #F9F9F9 18.75%, rgba(249, 249, 249, .794495) 85.42%, rgba(249, 249, 249, .3) 100%);
+    border-radius: 33px;
+    margin: 0 -10px 80px -40px;
+    order: 1;
+
+    &__wrapper {
+        padding: 10px;
+    }
+
+    &__params-wrapper {
+        margin: 0 0 64px;
+        padding: 0 10px 0 30px;
+    }
+
+    &__params {
+        &:not(:last-child) {
+            margin: 0 0 42px;
+        }
+    }
+
+    &__text {
+        color: @cl-light-grayish-blue;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0 0 24px;
+
+        & > p {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 0 22px;
+            }
+        }
+    }
+
+    &__data-sync {
+        padding: 0 20px 0 0;
+    }
+
+    &__summary {
+        background: @cl-white;
+        border-radius: 32px;
+        border: 1px solid @cl-vivid-orange;
+        box-shadow: 0px 5px 30px rgba(88, 89, 91, .1);
+        padding: 46px 30px 38px;
+    }
+
+    &__price {
+        text-align: center;
+    }
+
+    &__price-current {
+        .nunito-bold();
+        color: @cl-vivid-orange;
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0 0 4px;
+    }
+
+    &__accounts {
+        color: @cl-very-dark-grayish-blue;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0 0 40px;
+
+        span {
+            display: block;
+        }
+
+        b {
+            color: @cl-vivid-orange;
+            font-weight: normal;
+        }
+    }
+
+    &__rate {
+        color: @cl-very-dark-grayish-blue;
+        display: flex;
+        font-size: 15px;
+        justify-content: space-between;
+        line-height: 22px;
+        padding: 0 0 15px;
+        margin: 0 0 34px;
+        position: relative;
+
+        &:after {
+            background: @cl-lavender;
+            bottom: 0;
+            content: '';
+            height: 1px;
+            position: absolute;
+            width: 100%;
+        }
+
+        b {
+            .nunito-bold();
+        }
+    }
+
+    &__summary-buttons {
+        text-align: center;
+    }
+
+    &__switch {
+        margin: 0 -10px 48px;
+    }
+}

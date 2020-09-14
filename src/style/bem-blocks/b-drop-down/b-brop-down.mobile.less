@@ -1,0 +1,103 @@
+.b-drop-down {
+    position: relative;
+    width: 100%;
+
+    &__label {
+        margin-bottom: 5px;
+        letter-spacing: .5px;
+        color: @cl-light-grayish-blue;
+    }
+
+    &__text {
+        margin-top: 7px;
+        margin-bottom: 0;
+        font-size: 13px;
+        line-height: 18px;
+        color: @cl-light-grayish-blue;
+    }
+
+    &--bouble-menu {
+        margin-bottom: 30px;
+    }
+    
+    &--aurinko & {
+        &__label,
+        &__text {
+            color: @cl-white;
+        }
+    }
+}
+
+.select2 {
+    position: relative;
+    &-hidden-accessible {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &-container {
+        position: relative;
+        font-size: 15px;
+        line-height: 22px;
+        .nunito-extralight();
+        border: 1px solid @cl-light-gray;
+        background-color: @cl-snow;
+        border-radius: 12px;
+        color: @cl-light-grayish-blue;
+        display: block;
+        width: 100%!important;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    &-selection__rendered {
+        display: inline-block;
+        width: 100%;
+        padding: 11px;
+        cursor: pointer;
+    }
+
+    &-search--dropdown {
+        display: none;
+    }
+
+    &-results__options {
+        padding: 13px 11px 11px;
+
+        li {
+            list-style:none;
+            font-size: 15px;
+            line-height: 22px;
+
+            .no-touchevents &:hover,
+            .touchevents &:active {
+                background-color: @cl-gray77;
+            }
+        }
+    }
+
+    &-selection__arrow {
+        width: 7px;
+        height: 7px;
+        background: transparent;
+        border-top: 1px solid @cl-very-dark-grayish-blue;
+        border-right: 1px solid @cl-very-dark-grayish-blue;
+        position: absolute;
+        top: 17px;
+        transform: rotate(135deg);
+        right: 21px;
+        transition: .3s;
+    }
+
+    &-container--open {
+        .no-touchevents &:hover,
+        .touchevents &:active {
+            .select2-selection__arrow {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

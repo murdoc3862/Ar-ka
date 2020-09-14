@@ -1,0 +1,63 @@
+/* 320++  */
+.b-radio {
+    &__input {
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        width: 0;
+        z-index: 0;
+    }
+
+    &__label {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        height: 54px;
+        justify-content: center;
+        position: relative;
+
+        &:before {
+            background: @cl-white;
+            border-radius: 12px;
+            border: 1px solid @cl-purple-navy;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &__text-label {
+        color: @cl-very-dark-grayish-blue;
+        font-size: 13px;
+        line-height: 18px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+
+        b {
+            .nunito-bold();
+            display: block;
+            font-size: 15px;
+            line-height: 22px;
+        }
+    }
+
+    &__input:checked + &__label {
+        &:before {
+            border-color: @cl-vivid-orange;
+        }
+    }
+
+    &__input:checked + &__label &__text-label {
+        color: @cl-vivid-orange;
+    }
+
+    &--calculator {
+        &:not(:last-child) {
+            margin: 0 0 12px;
+        }
+    }
+}

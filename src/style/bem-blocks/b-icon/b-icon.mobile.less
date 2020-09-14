@@ -1,0 +1,99 @@
+/* 320++  */
+.b-icon {
+    &--check {
+        display: inline-flex;
+        font-size: 15px;
+        height: 15px;
+        line-height: 15px;
+    }
+
+    &--integrated {
+        color: @cl-vivid-orange;
+
+        .b-table--yoxel & {
+            color: @cl-dark-blue;
+        }
+    }
+
+    &--accordion {
+        color: @cl-vivid-orange;
+        display: inline-flex;
+        font-size: 12px;
+        height: 12px;
+        line-height: 12px;
+        margin: -6px 0 0;
+        position: absolute;
+        right: 28px;
+        top: 50%;
+
+        .b-accordion--pebbles & {
+            color: @cl-purple;
+        }
+
+        .b-accordion--yoxel & {
+            color: @cl-dark-blue;
+        }
+
+        .ui-state-active & {
+            color: @cl-light-gray;
+            transform: rotate(180deg);
+        }
+    }
+
+    &--button {
+        color: @cl-vivid-orange;
+        display: inline-flex;
+        font-size: 10px;
+        height: 10px;
+        line-height: 10px;
+        transition: color .7s ease-out;
+
+        .no-touchevents .b-button--regular:hover &,
+        .touchevents .b-button--regular:active & {
+            color: @cl-white;
+        }
+    }
+
+    &--check {
+        color: @cl-vivid-orange;
+    }
+
+    &--custom {
+        color: @cl-cinnabar;
+    }
+
+    &--logo-part2 {
+        margin-left: 7px;
+        color: @cl-dark-moderate-orange;
+        margin-top: 2px;
+    }
+
+    &--navbar {
+        display: inline-flex;
+        font-size: 10px;
+        height: 10px;
+        line-height: 10px;
+
+        .b-navbar.open & {
+           transform: rotate(180deg);
+        }
+
+        .b-navbar__title-link--yoxel & {
+            color: @cl-dark-blue;
+            margin: 0;
+        }
+
+        .b-navbar__title-link--pebbles & {
+            color: @cl-purple;
+            margin: 6px 0 0;
+        }
+    }
+
+    &--nav {
+        display: none;
+    }
+
+    &--figure {
+        padding-right: 12px;
+    }
+}

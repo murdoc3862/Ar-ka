@@ -1,0 +1,55 @@
+/* 1366++  */
+.b-calculator {
+    margin: 0 55px 0 78px;
+
+    &:after,
+    &:before {
+        height: 152px;
+    }
+
+    &:after {
+        width: 50%;
+        width: calc(~'50% + 85px');
+    }
+
+    &:before {
+        width: 50%;
+        width: calc(~'50% + 85px');
+    }
+
+    &__wrapper {
+        padding: 13px 15px 53px;
+        margin: 0 -5px;
+
+        &:after,
+        &:before {
+            left: 0;
+            right: 0;
+        }
+
+        &:after {
+            top: 152px;
+            border-radius: 37px;
+        }
+
+        &:before {
+            width: 50%;
+            width: calc(~'50% - 85px');
+        }
+    }
+
+    &__buttons {
+        margin: 0 0 113px;
+    }
+
+    &__params-wrapper {
+        margin: 20px 70px 0 65px;
+        width: calc(~'50% - 70px - 65px');
+    }
+
+    &__summary {
+        margin: 0 45px 0 100px;
+        padding: 50px 53px 38px;
+        width: calc(~'50% - 45px - 100px');
+    }
+}

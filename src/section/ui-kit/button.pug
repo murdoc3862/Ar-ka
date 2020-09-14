@@ -1,0 +1,18 @@
+//- ====================
+//- aurinko: link
+//- 18-07-2020: sashakasha
+//- --------------------
+//- Button
+//- ====================
+
+//- if <a>        link = true
+//- if <button>   link = false
+
+mixin button(content, link, href)
+    if link == true
+        +b('a').button(href=`${href ? href : 'javascript:void(0);'}` title=`${content}`)&attributes(attributes) #{content}
+            block
+
+    else
+        +b('button').button&attributes(attributes) #{content}
+            block

@@ -1,0 +1,118 @@
+/* 320++  */
+.b-content {
+    font-size: 15px;
+    line-height: 22px;
+    margin: 32px 0 42px;
+
+    &__wrapper {
+        padding: 0 0 0 40px;
+    }
+
+    h1,
+    h2,
+    h3,
+    b {
+       .nunito-bold();
+    }
+
+    b {
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 22px;
+        margin: 0 0 47px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0 0 24px;
+    }
+
+    h1 + h3 {
+        margin-top: -43px;
+    }
+
+    h3 {
+        font-size: 19px;
+        line-height: 22px;
+        margin: 0 0 23px;
+    }
+
+    p {
+        margin: 0;
+
+        &:not(:last-child) {
+            margin: 0 0 22px;
+        }
+    }
+
+    p + h2,
+    .list + h2 {
+        margin-top: 42px;
+    }
+
+    p + h3,
+    .list + h3 {
+        margin-top: 42px;
+    }
+
+    ul,
+    ol {
+        padding: 0;
+    }
+
+    ul {
+        margin: 0 0 23px;
+
+        li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0 0 0 16px;
+            position: relative;
+
+            &:after {
+                background: @cl-very-dark-grayish-blue;
+                border-radius: 50%;
+                content: '';
+                height: 6px;
+                left: 0;
+                position: absolute;
+                top: 8px;
+                width: 6px;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: li;
+        margin: 0 0 10px;
+
+        li {
+            counter-increment: li;
+            list-style-type: none;
+            position: relative;
+            padding: 0 0 0 16px;
+            margin: 0 0 22px;
+
+            &:before {
+                .nunito-bold();
+                content: counter(li)'.';
+                display: inline-block;
+                font-size: 15px;
+                line-height: 22px;
+                margin: 0 4px 0 -16px;
+            }
+        }
+    }
+
+    .list > p {
+        margin: 0;
+    }
+
+    &__image-wrapper {
+        display: none;
+    }
+}

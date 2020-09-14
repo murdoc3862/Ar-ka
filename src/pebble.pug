@@ -1,0 +1,129 @@
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'pebble'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Pebble';
+    - var pebbles = true;
+
+//- Выводим content
+block content
+    include section/assistant.pug
+    include section/ui-kit/title.pug
+
+    +b.intro.--pabble
+        +e.wrapper
+            +e.desc-wrapper
+                +e.desc
+                    +title('h1', 'Turn Slack threads ').--h1.--intro.--intro-pebble
+                        +e('span').mark into prioritized tasks
+                    +e.text
+                        p Track and prioritize threads directly within Slack. Pebbles enables Slack users to transparently manage development and delivery of products.
+                    include section/ui-kit/button.pug
+                    +button('', true, '/form-aurinko').--color.--color-position
+                        include section/ui-kit/icon.pug
+                        +icon('figure').--figure
+                        | Add to Slack
+            +e.image-wrapper
+                +e('img').image.--pebble(src='images/inhtml/computer.svg')
+    .b-container
+        +assistant({
+            title: '<span class="mark">Never lose</span> the thread of conversation again',
+            mark: 'the thread of conversation again',
+            text: 'Love Slack threads, but hate getting lost in all the updates? Relax, Threads got this. It’s your team’s intelligent messaging assistant.',
+            'items': [
+                {
+                    'header': 'Simple thread management.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Manage entire projects inside Slack.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png',
+                    'class': '-active'
+                },
+                {
+                    'header': 'Prioritize, or snooze. You choose.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Get sorted.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Complete inbox integration.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Thread your email into Slack.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Review team workloads.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                },
+                {
+                    'header': 'Break silos between teammates.',
+                    'description': 'Not all threads are equal. Now you can prioritize each one so you know what to tackle first. Overwhelmed? Hit the snooze option. Share your thread priorities with your team to sync your efforts.',
+                    'src': 'images/inhtml/card.png'
+                }
+            ]
+        }).js-mobile-open
+
+    +b.info-block
+        .b-container
+            +e('div').wrap-elements
+                +e(div).wrap-img
+                    +e('img')(src="images/inhtml/info-block2.svg", alt="")
+                +e(div).wrap-content
+                    +title('h2', 'Simple signup').--h2.--info-block
+                    +e('ul').ul
+                        li.b-list__item Simple installation from your Slack account. No account creation, passwords or logins.
+                        li.b-list__item One price for all, see our 
+                            a(src="#") pricing page.
+    +b.info-block.--color
+        .b-container
+            +e('div').wrap-elements
+                +e(div).wrap-content
+                    +title('h2', 'Get support right in Slack').--h2.--info-block
+                    +e('ul').ul
+                        li.b-list__item Need help? You can send a report request to the Pebbles team by typing your question in the Pebbles app channel.
+                        li.b-list__item If you need assistance getting Pebbles installed, you can reach us at: 
+                            a(src="#") support@pebbles.io
+                +e(div).wrap-img
+                    +e('img')(src="images/inhtml/info-block1.svg", alt="")
+
+    include section/how-it-works.pug
+    +b.wrap-how
+        +how-it-works({
+            title: '<span class="mark">Easy to install.</span> Hard to imagine going without.',
+            text: 'Install Threads right now to supercharge Slack threads and work happier. Click the install button below (an admin user needs to do the initial install), then follow these steps:',
+            'items': [{
+                'number': '1',
+                'text': 'Install Pebbles <a class="b-link b-link--mark" href="/pebbles">here</a> <span class="appeal">Please note that the initial install needs to be done by an admin.</span>'
+            },{
+                'number': '2',
+                'text': 'Invite <span class="mark-color">@threads</span> to public channel(s) to track your internal threads.'
+            },{
+                'number': '3',
+                'text': 'Use the <span class="mark-color">/threads</span> command to find and prioritize your active Slack threads.'
+            },{
+                'number': '4',
+                'text': 'Share or unshare your priorities with your team using the <span class="mark-color">/threads priority share</span> or /threads priority unshare</span> commands.'
+            },{
+                'number': '5',
+                'text': 'Invite <span class="mark-color">@threads</span> to a new private channel to pull in your email and enable snippet and attachment sharing with your team.'
+            }]
+        }).--page-pebble
+        +e('img')(src="images/inhtml/arm.svg", alt="").arm
+        +e('img')(src="images/inhtml/grid.svg", alt="").grid

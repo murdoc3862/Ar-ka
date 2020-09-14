@@ -1,0 +1,11 @@
+//- ====================
+//- aurinko: list
+//- 16-07-2020: sashakasha
+//- --------------------
+//- List
+//- ====================
+
+mixin list(data)
+    +b('ul').list&attributes(attributes)
+        each item in data.items
+            +e('li').item !{item.content}

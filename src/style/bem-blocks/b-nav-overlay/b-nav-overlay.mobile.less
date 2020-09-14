@@ -1,0 +1,46 @@
+/* 320++  */
+.b-nav-overlay {
+    background: @cl-white;
+    height: 100%;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: right @animation-time ease, opacity @animation-time ease, visibility @animation-time ease;
+    visibility: hidden;
+    width: 240px;
+    z-index: 5;
+
+    &.open {
+        opacity: 1;
+        right: 0;
+        visibility: visible;
+    }
+
+    &__content {
+        padding: 83px 23px 110px;
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        align-items: center;
+        height: 41px;
+        margin: 0 0 18px;
+        text-align: center;
+        padding-left: 14px;
+
+        .b-icon--logo-part2 {
+            font-size: 18px;
+        }
+    }
+
+    &__logo {
+        height: 100%;
+    }
+
+    &__buttons {
+        text-align: center;
+    }
+}

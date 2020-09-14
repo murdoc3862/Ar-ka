@@ -1,0 +1,58 @@
+//- ====================
+//- aurinko: curved-zone
+//- 09-04-2020: sashakasha
+//- --------------------
+//- Curved-zone
+//- ====================
+
+mixin curved-zone--top()
+    include ui-kit/title.pug
+
+    +b.curved-zone(class!=attributes.class)
+        +e.background
+        +e('img').cache-top(src='images/inhtml/curved-top-cache-top.svg', alt)
+        .b-container
+            +e.wrapper
+                +e.desc
+                    +title('h2', 'Building apps with our unified API, event based two-way sync, and pre-built add-ins is&nbsp;a&nbsp;breeze').--h2.--color.--curved-zone-top
+                    +e.text
+                        p Save time and money with our secure unified API solution for Google, Office 365, Outlook.com, and Exchange calendars, email, and contacts. Let your users fall in&nbsp;love with you by&nbsp;making their lives easier, instantly.
+        +e('img').cache-bottom(src='images/inhtml/curved-top-cache-bottom.svg', alt)
+
+
+mixin curved-zone--bottom()
+    include ui-kit/link.pug
+    include ui-kit/list.pug
+    include ui-kit/title.pug
+
+    +b.curved-zone(class!=attributes.class)
+        +e.background
+        +e('img').cache-top(src='images/inhtml/curved-bottom-cache-top.svg', alt)
+        .b-container
+            +e.wrapper
+                +e.desc
+                    +title('h2', 'BrightSync&nbsp;&mdash; pre-build sync logic').--h2.--curved-zone-bottom
+                    +e.text-wrapper
+                        +e.text.--curved-zone-bottom
+                            p Aurinko has built a&nbsp;configurable BrightSync engine for CRM, project management, human resources, accounting, marketing and other platform providers that migrates data between their platform and mailboxes automatically.
+                            p
+                                +link('Contact us', true, '/form-aurinko')
+                                |  to&nbsp;learn more about BrightSync and avoid re-inventing and developing the sync logic.
+                        +e.icon-wrapper
+                            +e('img').icon(src='images/inhtml/icon-bright-sync.svg', alt)
+                    +title('h3', 'BrightSync is&nbsp;capable&nbsp;of:').--h3.--m30
+                    +list({
+                        'items':[{
+                                'content': 'Two way calendar sync between user mailbox and the business system'
+                            },
+                            {
+                                'content': 'One way email logging to&nbsp;the business system with contact/opportunity matching'
+                            },
+                            {
+                                'content': 'Two way contacts sync between user mailbox and the business system'
+                            },
+                            {
+                                'content': 'Two way tasks sync between user mailbox and the business system'
+                        }]
+                    }).--marked.--curved-zone
+        +e('img').cache-bottom(src='images/inhtml/curved-bottom-cache-bottom.svg', alt)

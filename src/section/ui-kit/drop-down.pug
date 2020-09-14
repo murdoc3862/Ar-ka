@@ -1,0 +1,7 @@
+mixin drop-down(data)
+    +b.drop-down(class!=attributes.class)
+        +e('label').label #{data.text}
+        select.js-select #{data.stroke}
+            each item in data.items
+                +e('option')(id=`${item.id}` value=`${item.value}`) #{item.content}
+        +e('p').text Please select an option from the dropdown menu.

@@ -1,0 +1,51 @@
+/* 320++  */
+.b-dots {
+    bottom: 35px;
+    display: block;
+    list-style: none;
+    margin: 27px 0 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    li {
+        cursor: pointer;
+        display: inline-block;
+        height: 27px;
+        margin: 0 11px;
+        padding: 0;
+        position: relative;
+        width: 27px;
+
+        button {
+            background: transparent;
+            border: 0;
+            color: transparent;
+            cursor: pointer;
+            display: block;
+            font-size: 0;
+            height: 27px;
+            line-height: 0;
+            outline: none;
+            padding: 0;
+            width: 27px;
+
+            &:before {
+                background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(248, 156, 50, 1) 100%);
+                border-radius: 50%;
+                color: black;
+                content: '';
+                height: 27px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 27px;
+            }
+        }
+
+        &.slick-active button:before {
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(239, 66, 35, 1) 100%);
+        }
+    }
+}
