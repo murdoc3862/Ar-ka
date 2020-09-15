@@ -12,10 +12,7 @@
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
-    "prod": "npm run build; npm run build lambda",
-    "lint": "gulp lint",
-    "start:lambda": "netifly-lambda serve function",
-    "build:lambda": "netifly-lambda build function"
+    "lint": "gulp lint"
   },
   "engines": {
     "node": ">= 0.10.0"
