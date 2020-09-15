@@ -1,3 +1,2 @@
 [build]
-  function = "lambda"
-  Command = "npm run prod"
+command = «CI = npm run build»
